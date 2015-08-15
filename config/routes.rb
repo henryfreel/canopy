@@ -1,56 +1,52 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  get 'sessions/new'
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  get 'sessions/create'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get 'sessions/destroy'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  get 'pages/index'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  get 'pages/show'
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  #pages
+  root 'pages#index'
+  get '/about', to:'pages#show'
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  #users
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
+  resources :users, except: [:new, :create]
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+  #sessions
+  get '/login', to: 'sessions#new'
+  post '/sessions', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+  #projects
+  resources :projects
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end
+
+#       Prefix Verb   URI Pattern                  Controller#Action
+#         root GET    /                            pages#index
+#        about GET    /about(.:format)             pages#show
+#       signup GET    /signup(.:format)            users#new
+#              POST   /signup(.:format)            users#create
+#        users GET    /users(.:format)             users#index
+#    edit_user GET    /users/:id/edit(.:format)    users#edit
+#         user GET    /users/:id(.:format)         users#show
+#              PATCH  /users/:id(.:format)         users#update
+#              PUT    /users/:id(.:format)         users#update
+#              DELETE /users/:id(.:format)         users#destroy
+#        login GET    /login(.:format)             sessions#new
+#     sessions POST   /sessions(.:format)          sessions#create
+#       logout GET    /logout(.:format)            sessions#destroy
+#     projects GET    /projects(.:format)          projects#index
+#              POST   /projects(.:format)          projects#create
+#  new_project GET    /projects/new(.:format)      projects#new
+# edit_project GET    /projects/:id/edit(.:format) projects#edit
+#      project GET    /projects/:id(.:format)      projects#show
+#              PATCH  /projects/:id(.:format)      projects#update
+#              PUT    /projects/:id(.:format)      projects#update
+#              DELETE /projects/:id(.:format)      projects#destroy
