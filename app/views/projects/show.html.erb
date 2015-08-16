@@ -1,2 +1,8 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<h1><%= @project.title %></h1>
+<p>Created by: <%= @project.user.username %></p>
+<p><%= @project.description %></p>
+<p><%= @project.live_url %></p>
+<p><%= @project.github_url %></p>
+
+<%= link_to "Edit project", edit_project_path(@project) %>
+<%= link_to "Delete project", @project, method: :delete, data: { confirm: 'Are you want to delete this project?'} %>
