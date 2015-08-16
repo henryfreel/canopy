@@ -1,2 +1,10 @@
 <h1>Hello, <%= @user.username %></h1>
-<p>This is your profile page.</p>
+
+<p>Primary email: <%= @user.email %></p>
+<p>Member since: <%= @user.created_at %></p>
+<p>Your home city: <%= @user.location %></p>
+<p><%= @user.bio %></p>
+
+ <%= link_to "Edit my profile", edit_user_path(@user) %><br>
+
+ <%= link_to "Log Out", logout_path %>

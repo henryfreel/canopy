@@ -1,22 +1,12 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  get 'pages/index'
-
-  get 'pages/show'
-
   #pages
   root 'pages#index'
   get '/about', to:'pages#show'
 
   #users
   get '/signup', to: 'users#new'
-  post '/signup', to: 'users#create'
-  resources :users, except: [:new, :create]
+  get '/profile', to: 'users#show'
+  resources :users, except: [:new, :show]
 
   #sessions
   get '/login', to: 'sessions#new'
@@ -28,15 +18,15 @@ Rails.application.routes.draw do
 
 end
 
-#       Prefix Verb   URI Pattern                  Controller#Action
+#      Prefix Verb   URI Pattern                  Controller#Action
 #         root GET    /                            pages#index
 #        about GET    /about(.:format)             pages#show
 #       signup GET    /signup(.:format)            users#new
-#              POST   /signup(.:format)            users#create
+#      profile GET    /profile(.:format)           users#show
 #        users GET    /users(.:format)             users#index
+#              POST   /users(.:format)             users#create
 #    edit_user GET    /users/:id/edit(.:format)    users#edit
-#         user GET    /users/:id(.:format)         users#show
-#              PATCH  /users/:id(.:format)         users#update
+#         user PATCH  /users/:id(.:format)         users#update
 #              PUT    /users/:id(.:format)         users#update
 #              DELETE /users/:id(.:format)         users#destroy
 #        login GET    /login(.:format)             sessions#new
