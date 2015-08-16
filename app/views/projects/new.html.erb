@@ -1,2 +1,10 @@
-<h1>Projects#new</h1>
-<p>Find me in app/views/projects/new.html.erb</p>
+<h1>Post a new project</h1>
+
+<%= form_for @project do |f| %>
+  <%= f.text_field :title, placeholder: "Project title", autofocus: true, :required => true %><br>
+  <%= f.text_field :live_url, placeholder: "Link to live project", :required => true %><br>
+  <%= f.text_field :github_url, placeholder: "Link to Github repo" %><br>
+  <%= f.text_field :description, placeholder: "Describe your project", :required => true %><br>
+  <%= f.submit "Create project" %><br>
+
+<% end %>
