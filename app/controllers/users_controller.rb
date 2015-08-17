@@ -41,16 +41,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by_username(params[:username])
     render :edit
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      redirect_to "/canopy-#{@user[:username]}"
+    user = User.find(params[:id])
+    if user.update_attributes(user_params)
+      redirect_to "/canopy-#{user[:username]}"
     else
-      flash[:notice] = @user.error
+      flash[:notice] = user.error
       redirect_to :back
     end
   end
