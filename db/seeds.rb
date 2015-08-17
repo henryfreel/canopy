@@ -25,7 +25,7 @@ User.create(first_name: 'Zoe', last_name: 'Foss', username: 'Zoe', email: 'zoe@g
         <% end %>
     </div>
   </div>
-</div>'
+</div>',
   user_id: 1,
 )
 end
@@ -51,7 +51,7 @@ end
         <% end %>
     </div>
   </div>
-</div>'
+</div>',
   user_id: 2,
 )
 end
@@ -77,7 +77,7 @@ end
         <% end %>
     </div>
   </div>
-</div>'
+</div>',
   user_id: 3,
 )
 end
