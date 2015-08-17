@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+
+gem 'ffaker'
+
 gem 'pg'
 
 gem 'aws-sdk', '~> 1.6'
@@ -46,7 +49,7 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem 'ffaker'
+
 
   gem 'dotenv-rails'
 
