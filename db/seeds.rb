@@ -10,26 +10,74 @@ User.create(first_name: 'Zoe', last_name: 'Foss', username: 'Zoe', email: 'zoe@g
   github_url: 'www.github.com/testproject',
   title: FFaker::Lorem.words(3).join(' '),
   description: FFaker::Lorem.words(20).join(' '),
+  snippet: '<div class="container">
+  <div class="row">
+    <div class="col-md-6 well">
+      <h1>All Projects</h1>
+        <% @projects.each do |project| %>
+          <strong><%= project.title %></strong><br>
+          <%= project.user.username %><br>
+          <%= project.live_url %><br>
+          <%= project.github_url %><br>
+          <%= project.description %><br>
+          <pre><code><%= project.snippet %><br></code></pre>
+          <br>
+        <% end %>
+    </div>
+  </div>
+</div>',
   user_id: 1,
 )
 end
 
-6.times do
+5.times do
   Project.create(
   live_url: 'www.liveurl.herokuapp.com',
   github_url: 'www.github.com/testproject',
   title: FFaker::Lorem.words(3).join(' '),
   description: FFaker::Lorem.words(20).join(' '),
+  snippet: '<div class="container">
+  <div class="row">
+    <div class="col-md-6 well">
+      <h1>All Projects</h1>
+        <% @projects.each do |project| %>
+          <strong><%= project.title %></strong><br>
+          <%= project.user.username %><br>
+          <%= project.live_url %><br>
+          <%= project.github_url %><br>
+          <%= project.description %><br>
+          <pre><code><%= project.snippet %><br></code></pre>
+          <br>
+        <% end %>
+    </div>
+  </div>
+</div>',
   user_id: 2,
 )
 end
 
-6.times do
+4.times do
   Project.create(
   live_url: 'www.liveurl.herokuapp.com',
   github_url: 'www.github.com/testproject',
   title: FFaker::Lorem.words(3).join(' '),
   description: FFaker::Lorem.words(20).join(' '),
+  snippet: '<div class="container">
+  <div class="row">
+    <div class="col-md-6 well">
+      <h1>All Projects</h1>
+        <% @projects.each do |project| %>
+          <strong><%= project.title %></strong><br>
+          <%= project.user.username %><br>
+          <%= project.live_url %><br>
+          <%= project.github_url %><br>
+          <%= project.description %><br>
+          <pre><code><%= project.snippet %><br></code></pre>
+          <br>
+        <% end %>
+    </div>
+  </div>
+</div>',
   user_id: 3,
 )
 end
