@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   #users
   get '/signup', to: 'users#new'
   get '/canopy-:username', to: 'users#show', as: 'show_user'
-  resources :users, except: [:new, :show]
+  get '/canopy-:username/edit', to: 'users#edit', as: 'edit_user'
+  resources :users, except: [:new, :show, :edit]
 
   #sessions
   get '/login', to: 'sessions#new'

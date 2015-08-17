@@ -8,7 +8,10 @@
 <p>Your home city: <%= @user.location %></p>
 <p>Bio: <%= @user.bio %></p>
 
- <%= link_to "Edit my profile", edit_user_path(@user) %><br>
+<% if current_user && current_user[:id] == @user.id %>
+  <%= link_to "Edit my profile", edit_user_path(@user.username) %><br>
+<% end %>
+
   <% if current_user.projects.any? %>
     <h3>My projects</h3>
     <% @user.projects.reverse.each do |project| %>
