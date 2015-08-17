@@ -1,7 +1,16 @@
-<h1>Log In</h1>
-<br>
-  <%= form_for :user, url: sessions_path do |f| %>
-    <%= f.email_field :email, placeholder: "Email", :required => true, :autofocus => true %><br>
-    <%= f.password_field :password, placeholder: "Password", :required => true %><br>
-    <%= f.submit "Log In" %>
-  <% end  %>
+<div class="row">
+	<div class="col-md-4 col-md-offset-4" id="login-form">
+		<%= form_for :user, url: sessions_path do |f| %>
+	 	<div class="form-group">
+			<!-- <label for="">Username</label> -->
+	    	<%= f.email_field :email, placeholder: "Email", required: true, autofocus: true, class: "form-control" %>
+	    </div>
+	    <div class="form-group">
+	    	<!-- <label for="">Password</label> -->
+	    	<%= f.password_field :password, placeholder: "Password", required: true, class: "form-control" %>
+	    </div>
+
+	    <%= f.submit "Log In", class: "btn btn-primary btn-block input-button" %>
+	  <% end  %>
+	</div>
+</div>
