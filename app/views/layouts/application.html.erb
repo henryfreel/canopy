@@ -29,7 +29,7 @@
             <% if current_user %>
             <!-- button if user logs in -->
               <li><a href="/projects/new">New Project</a></li>
-              <li><a href="/profile">Profile</a></li>
+              <li><a href="/canopy-<%= current_user.username %>">Profile</a></li>
               <li><a href="/logout">Log out</a></li>
               
             <% else %>

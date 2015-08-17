@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if current_user 
-      redirect_to profile_path
+      redirect_to "/canopy-#{current_user[:username]}"
     else
     render :new
     end
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(user_params[:email])
     if user && user.authenticate(user_params[:password])
       session[:user_id] = user.id
-      redirect_to profile_path
+      redirect_to "/canopy-#{user[:username]}"
     else
       # flash[:error] = sessions.errors.full_messages.join(", ")
       redirect_to login_path
