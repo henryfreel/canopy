@@ -12,3 +12,6 @@ Steps to take everytime database or migrations change:
 2. rake db:migrate:reset
 3. rake db:seed
 4. restart rails server
+
+TODO Monday
+1. clarify Git procedure
