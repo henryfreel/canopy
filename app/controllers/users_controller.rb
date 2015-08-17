@@ -6,7 +6,8 @@ class UsersController < ApplicationController
 
   def new
     if current_user
-      redirect_to profile_path
+      redirect_to "/canopy-#{@user[:username]}"
+
     else
       @user = User.new
       render :new
@@ -15,12 +16,14 @@ class UsersController < ApplicationController
 
   def create
     if current_user
-      redirect_to profile_path
+      redirect_to "/canopy-#{current_user[:username]}"
+
     else
       @user = User.new(user_params)
       if @user.save
         session[:user_id] = @user.id
-        redirect_to profile_path
+        redirect_to "/canopy-#{@user[:username]}"
+
       else
         flash[:error] = @user.errors.full_messages.join(", ")
         redirect_to signup_path
@@ -29,8 +32,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params[:id].present?
-      @user = User.find(params[:id])
+    if params[:username].present?
+      @user = User.find_by_username(params[:username])
     else
       @user = User.find(session[:user_id])
     end
@@ -45,7 +48,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to profile_path(@user)
+      redirect_to "/canopy-#{@user[:username]}"
     else
       flash[:notice] = @user.error
       redirect_to :back

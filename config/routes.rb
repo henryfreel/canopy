@@ -5,24 +5,24 @@ Rails.application.routes.draw do
 
   #users
   get '/signup', to: 'users#new'
-  get '/profile', to: 'users#show'
+  get '/canopy-:username', to: 'users#show', as: 'show_user'
   resources :users, except: [:new, :show]
 
   #sessions
   get '/login', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
-  get 'logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
   #projects
   resources :projects
 
 end
 
-#      Prefix Verb   URI Pattern                  Controller#Action
+# Prefix Verb   URI Pattern                  Controller#Action
 #         root GET    /                            pages#index
 #        about GET    /about(.:format)             pages#show
 #       signup GET    /signup(.:format)            users#new
-#      profile GET    /profile(.:format)           users#show
+#    show_user GET    /canopy-:username(.:format)  users#show
 #        users GET    /users(.:format)             users#index
 #              POST   /users(.:format)             users#create
 #    edit_user GET    /users/:id/edit(.:format)    users#edit
