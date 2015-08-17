@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
   <!-- bootstrap css cdn -->
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css" rel="stylesheet">
 
   <title>Snorkel</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -28,7 +29,7 @@
             <% if current_user %>
             <!-- button if user logs in -->
               <li><a href="/projects/new">New Project</a></li>
-              <li><a href="/profile">Profile</a></li>
+              <li><a href="/canopy-<%= current_user.username %>">Profile</a></li>
               <li><a href="/logout">Log out</a></li>
               
             <% else %>
@@ -53,6 +54,10 @@
 
 <!-- bootstrap js -->
  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+<script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>
