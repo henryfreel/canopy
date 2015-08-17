@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #pages
-  root 'pages#index'
+  root 'projects#index'
   get '/about', to:'pages#show'
 
   #users
