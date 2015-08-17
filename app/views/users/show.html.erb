@@ -1,4 +1,7 @@
 <h1>Hello, <%= @user.username %></h1>
+<div>
+  <%= image_tag @user.avatar.url(:thumb) %>
+</div>
 <p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
 <p>Primary email: <%= @user.email %></p>
 <p>Member since: <%= @user.created_at %></p>
