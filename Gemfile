@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'pg'
 
 gem 'aws-sdk', '~> 1.6'
 
@@ -48,5 +49,10 @@ group :development, :test do
   gem 'ffaker'
 
   gem 'dotenv-rails'
+
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
