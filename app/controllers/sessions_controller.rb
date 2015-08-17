@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to profile_path
     else
+      # flash[:error] = sessions.errors.full_messages.join(", ")
       redirect_to login_path
     end
   end
