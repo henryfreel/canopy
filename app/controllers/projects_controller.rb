@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
       project = Project.new(project_params)
       project.user_id = session[:user_id]
       if project.save
+        flash[:notice] = 'Project created.'
         redirect_to project_path(project)
       else
         flash[:error] = project.errors.full_messages.join(", ")
