@@ -1,6 +1,6 @@
 <h1>Edit Profile</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, :html => { :multipart => true } do |f| %>
   <%= f.text_field :first_name, placeholder: "First name", autofocus: true %><br>
   <%= f.text_field :last_name, placeholder: "Last name" %><br>
   <%= f.text_field :username, placeholder: "Username" %> <br>
@@ -11,5 +11,6 @@
   <%= f.text_field :linkedin, placeholder: "Linked In profile page" %><br>
   <%= f.text_field :job_title, placeholder: "Job Title" %><br>
   <%= f.text_field :stack, placeholder: "List your skills and specialties" %><br>
+  <%= f.file_field :avatar %>
   <%= f.submit "Save Changes" %><br>
 <% end %>
