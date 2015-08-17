@@ -1,3 +1,14 @@
 == "Project Snorkel"
 
-When you first clone locally, first create and migrate the database (in terminal: 'rake db: create' and then rake db:migrate) and get all the gems you'll need (in terminal: 'bundle install').
+First time cloning locally:
+1. copy project url from master repo
+2. bundle install
+3. rake db:create
+4. rake db:migrate
+5. rake db:seed
+
+Steps to take everytime database or migrations change:
+1. turn off rails server
+2. rake db:migrate:reset
+3. rake db:seed
+4. restart rails server
