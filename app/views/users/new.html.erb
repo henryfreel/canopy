@@ -1,11 +1,12 @@
 
 <h1>Sign Up</h1>
-<%= form_for @user do |f| %>
+<%= form_for @user, :html => { :multipart => true } do |f| %>
   <%= f.text_field :first_name, placeholder: "First name", autofocus: true %><br>
   <%= f.text_field :last_name, placeholder: "Last name" %><br>
   <%= f.text_field :username, placeholder: "Choose a username", :required => true %><br>
   <%= f.email_field :email, placeholder: "Email", :required => true %><br>
   <%= f.password_field :password, placeholder: "Password", :required => true %><br>
+  <%= f.file_field :avatar %>
   <%= f.submit "Sign Up" %><br>
 <% end %>
 
