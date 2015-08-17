@@ -8,8 +8,6 @@
   <%= f.password_field :password, placeholder: "Password", :required => true %><br>
   <%= f.submit "Sign Up" %><br>
 <% end %>
-<% flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, class: "alert #{name == 'error' ? 'alert-danger' : 'alert-notice'}" %>
-<% end %>
+
 <br>
 <p>Already have an account? <%= link_to "Click here", login_path %> to log in.</p>
