@@ -6,6 +6,7 @@ First time cloning locally:
 3. rake db:create
 4. rake db:migrate
 5. rake db:seed
+6. brew install imagemagick
 
 Steps to take everytime database or migrations change:
 1. turn off rails server
