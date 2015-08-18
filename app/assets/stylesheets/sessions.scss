@@ -2,13 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'styles';
+
+.login-page {
+	background-color: $grey-light;
+}
+
 /* - - - - - - - - Login Form - - - - - - - - */
 
 #login-form {
 	margin-top: 80px;
 	padding: 40px;
-	border: 1px solid #ddd;
+	border: 1px solid $grey;
 	border-radius: 4px;
+	background-color:$white;
+}
+
+body {
+	// background-color:$grey-light;
 }
 
 .input-button {
@@ -19,7 +30,7 @@
 }
 
 .input-button:hover {
-	background-color: #546E2D;
+	background-color: $primary-color-dark;
 }
 
 .form-control {
