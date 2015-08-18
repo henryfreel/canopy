@@ -1,13 +1,19 @@
-<h1>Post a new project</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Post a new project</h1>
 
-<%= form_for @project do |f| %>
-  <%= f.text_field :title, placeholder: "Project title", autofocus: true, :required => true %><br>
-  <%= f.text_field :live_url, placeholder: "Link to live project", :required => true %><br>
-  <%= f.text_field :github_url, placeholder: "Link to Github repo" %><br>
-  <%= f.text_area :description, cols: "60", rows: "3", placeholder: "Describe your project", :required => true %><br>
-  <%= f.text_area :snippet, cols: "60", rows: "15", placeholder: "Code snippets" %><br>
-  <%= f.submit "Create project" %><br>
+      <%= form_for @project do |f| %>
+        <%= f.text_field :title, placeholder: "Project title", autofocus: true, :required => true %><br>
+        <%= f.text_field :live_url, placeholder: "Link to live project", :required => true %><br>
+        <%= f.text_field :github_url, placeholder: "Link to Github repo" %><br>
+        <%= f.text_area :description, cols: "60", rows: "3", placeholder: "Describe your project", :required => true %><br>
+        <%= f.text_area :snippet, cols: "60", rows: "15", placeholder: "Add code snippets" %><br>
+        <%= f.submit "Create project" %><br>
 
-<% end %>
+      <% end %>
 
-<p id="notice"
+      <p id="notice">
+    </div>
+  </div>
+</div>
