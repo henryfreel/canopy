@@ -1,3 +1,37 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* - - - - - - - - Login Form - - - - - - - - */
+
+#login-form {
+	margin-top: 80px;
+	padding: 40px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+.input-button {
+	text-transform: uppercase;
+	font-size: 16px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.input-button:hover {
+	background-color: #546E2D;
+}
+
+.form-control {
+	height: 42px;
+}
+
+#login-logo {
+	margin: auto;
+	height: 70px;
+	width: 70px;
+	margin-bottom: 40px;
+	background-size: cover;
+	background-position: center;
+	background-image: url(/assets/logo-grey-2.svg);
+}
