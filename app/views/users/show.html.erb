@@ -1,25 +1,31 @@
-<h1>Hello, <%= @user.username %></h1>
-<div>
-  <%= image_tag @user.avatar.url(:thumb) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Hello, <%= @user.username %></h1>
+      <div>
+        <%= image_tag @user.avatar.url(:thumb) %>
+      </div>
+      <p><b>Name:</b> <%= @user.first_name %> <%= @user.last_name %></p>
+      <p><b>Email:</b> <%= @user.email %></p>
+      <p><b>Joined on:</b> <%= @user.created_at %></p>
+      <p><b>Current location:</b> <%= @user.location %></p>
+      <p><b>Bio:</b> <%= @user.bio %></p>
+
+      <% if current_user && current_user[:id] == @user.id %>
+        <%= link_to "Edit my profile", edit_user_path(@user.username) %><br>
+      <% end %>
+
+        <% if current_user.projects.any? %>
+          <h3>My projects</h3>
+          <% @user.projects.reverse.each do |project| %>
+            <strong><%= project.title %></strong><br>
+            <%= project.description %><br>
+            <%= link_to "View", project_path(project) %><br>
+            <br>
+          <% end %>
+        <% else %>
+          <p>You don't have any projects yet.</p>
+        <% end %>
+    </div>
+  </div>
 </div>
-<p><b>Name:</b> <%= @user.first_name %> <%= @user.last_name %></p>
-<p><b>Email:</b> <%= @user.email %></p>
-<p><b>Joined on:</b> <%= @user.created_at %></p>
-<p><b>Current location:</b> <%= @user.location %></p>
-<p><b>Bio:</b> <%= @user.bio %></p>
-
-<% if current_user && current_user[:id] == @user.id %>
-  <%= link_to "Edit my profile", edit_user_path(@user.username) %><br>
-<% end %>
-
-  <% if current_user.projects.any? %>
-    <h3>My projects</h3>
-    <% @user.projects.reverse.each do |project| %>
-      <strong><%= project.title %></strong><br>
-      <%= project.description %><br>
-      <%= link_to "View", project_path(project) %><br>
-      <br>
-    <% end %>
-  <% else %>
-    <p>You don't have any projects yet.</p>
-  <% end %>
