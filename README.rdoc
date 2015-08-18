@@ -16,4 +16,3 @@ Steps to take everytime database or migrations change:
 
 TODO Monday
 1. clarify Git procedure
-2.
