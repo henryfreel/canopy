@@ -7,6 +7,10 @@ class UsersController < ApplicationController
   def new
     # disable nav bar
     @disable_nav = true
+
+    # set background color
+    @signup_page = true
+
     if current_user
       redirect_to "/canopy-#{@user[:username]}"
 
