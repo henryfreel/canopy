@@ -1,14 +1,40 @@
-
-<h1>Sign Up</h1>
-<%= form_for @user, :html => { :multipart => true } do |f| %>
-  <%= f.text_field :first_name, placeholder: "First name", autofocus: true %><br>
-  <%= f.text_field :last_name, placeholder: "Last name" %><br>
-  <%= f.text_field :username, placeholder: "Choose a username", :required => true %><br>
-  <%= f.email_field :email, placeholder: "Email", :required => true %><br>
-  <%= f.password_field :password, placeholder: "Password", :required => true %><br>
-  <%= f.file_field :avatar %>
-  <%= f.submit "Sign Up" %><br>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="text-center">
+			<h1>Let's do this shit</h1>
+		</div>
+		<div class="col-md-8 col-md-offset-2" id="signup-form">
+			<%= form_for @user, :html => { :multipart => true } do |f| %>
+				<div class="col-md-6">
+					<div class="form-group">
+						<%= f.text_field :first_name, placeholder: "First name", autofocus: true, class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.text_field :last_name, placeholder: "Last name", class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.text_field :username, placeholder: "Choose a username", required: true, class: "form-control" %>			
+					</div>
+					<div class="form-group">
+						<%= f.email_field :email, placeholder: "Email", required: true, class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.password_field :password, placeholder: "Password", required: true, class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.submit "Sign Up", class: "btn btn-primary btn-block input-button" %>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<%= f.submit "Sign Up With Github", class: "btn btn-default btn-block input-button" %>
+					</div>
+				</div>
+			  
+			<% end %>
+		</div>
+	</div>
+</div>
 
 <br>
 <p>Already have an account? <%= link_to "Click here", login_path %> to log in.</p>
