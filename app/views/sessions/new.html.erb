@@ -1,17 +1,21 @@
-<div class="row">
-	<div class="col-md-4 col-md-offset-4" id="login-form">
-		<%= image_tag 'logo-medium.svg' %>
-		<%= form_for :user, url: sessions_path do |f| %>
-	 	<div class="form-group">
-			<!-- <label for="">Username</label> -->
-	    	<%= f.email_field :email, placeholder: "Email", required: true, autofocus: true, class: "form-control" %>
-	    </div>
-	    <div class="form-group">
-	    	<!-- <label for="">Password</label> -->
-	    	<%= f.password_field :password, placeholder: "Password", required: true, class: "form-control" %>
-	    </div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4" id="login-form">
+			<div id="login-logo"></div>
+			<%= form_for :user, url: sessions_path do |f| %>
+		 	<div class="form-group">
+				<!-- <label for="">Username</label> -->
+		    	<%= f.email_field :email, placeholder: "Email", required: true, autofocus: true, class: "form-control" %>
+		    </div>
+		    <div class="form-group">
+		    	<!-- <label for="">Password</label> -->
+		    	<%= f.password_field :password, placeholder: "Password", required: true, class: "form-control" %>
+		    </div>
 
-	    <%= f.submit "Log In", class: "btn btn-primary btn-block input-button" %>
-	  <% end  %>
+		    <%= f.submit "Log In", class: "btn btn-primary btn-block input-button" %>
+		    <br>
+			<p class="text-center">Don't have an account? <a href="/signup">Sign Up</a> for one now!</p>
+		  <% end  %>
+		</div>
 	</div>
 </div>
