@@ -5,7 +5,7 @@
       <div>
         <%= image_tag @user.avatar.url(:thumb) %>
       </div>
-      <p><b>Name:</b> <%= @user.first_name %> <%= @user.last_name %></p>
+      <p><b>Name:</b> <%= @user.full_name %></p>
       <p><b>Email:</b> <%= @user.email %></p>
       <p><b>Joined on:</b> <%= @user.created_at %></p>
       <p><b>Current location:</b> <%= @user.location %></p>
