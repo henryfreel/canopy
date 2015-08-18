@@ -2,11 +2,11 @@
 <div>
   <%= image_tag @user.avatar.url(:thumb) %>
 </div>
-<p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
-<p>Primary email: <%= @user.email %></p>
-<p>Member since: <%= @user.created_at %></p>
-<p>Your home city: <%= @user.location %></p>
-<p>Bio: <%= @user.bio %></p>
+<p><b>Name:</b> <%= @user.first_name %> <%= @user.last_name %></p>
+<p><b>Email:</b> <%= @user.email %></p>
+<p><b>Joined on:</b> <%= @user.created_at %></p>
+<p><b>Current location:</b> <%= @user.location %></p>
+<p><b>Bio:</b> <%= @user.bio %></p>
 
 <% if current_user && current_user[:id] == @user.id %>
   <%= link_to "Edit my profile", edit_user_path(@user.username) %><br>
