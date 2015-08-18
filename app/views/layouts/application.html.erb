@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
   <!-- bootstrap css cdn -->
   <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -17,7 +19,6 @@
   <%= favicon_link_tag 'favicon.ico' %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -37,9 +38,8 @@
             <% if current_user %>
             <!-- button if user logs in -->
               <li><a href="/projects/new" class="btn navbar-btn btn-primary">New Project</a></li>
-              <li><a href="/profile" class="btn navbar-btn btn-primary">Profile</a></li>
+              <li><a href="/canopy-<%= current_user.username %>" class="btn navbar-btn btn-primary">Profile</a></li>
               <li><a href="/logout" class="btn navbar-btn btn-primary">Log out</a></li>
-              
             <% else %>
               <!-- buttons to show if no user -->
               <li><a href="/login" class="btn navbar-btn btn-default">Log in</a></li>
@@ -62,6 +62,10 @@
 
 <!-- bootstrap js -->
  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+<script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>
