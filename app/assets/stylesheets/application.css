@@ -29,9 +29,27 @@ body {
 	color: #fff;
 	font-size: 24px;
 	height: 60px;
-	padding-top: 20px;
+	padding-top: 15px;
 	font-family: 'Quicksand', sans-serif;
 	letter-spacing: 0px;
+	margin-right: 10px;
+}
+
+#navbar-logo {
+	display: inline-block;
+	/*position: relative;*/
+	height: 30px;
+	width: 30px;
+	margin-right: 10px;
+	background-size: cover;
+	background-position: center;
+	background-image: url(/assets/logo-green.svg);
+}
+
+#navbar-name {
+	position: relative;
+	top: -5px; 
+	display: inline-block;
 }
 
 .navbar .btn {
@@ -95,23 +113,24 @@ body {
 }
 
 
-/* - - - - - - - - Main Nav - - - - - - - - */
 
-#login-form {
-	padding: 40px;
-	border: 1px solid #ccc;
-}
 
-.input-button {
-	text-transform: uppercase;
-	font-size: 16px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
 
-.form-control {
-	height: 42px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
