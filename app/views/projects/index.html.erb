@@ -4,10 +4,11 @@
       <h1>All Projects</h1>
         <% @projects.each do |project| %>
           <strong><%= project.title %></strong><br>
+          <%= project.user.username %><br>
           <%= project.live_url %><br>
           <%= project.github_url %><br>
           <%= project.description %><br>
-          <%= project.user.username %><br>
+          <pre><code><%= project.snippet %><br></code></pre>
           <br>
         <% end %>
     </div>
