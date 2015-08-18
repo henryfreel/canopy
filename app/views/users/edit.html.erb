@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col-md-12">
       <h1>Edit Profile</h1>
-
       <%= form_for @user, :html => { :multipart => true } do |f| %>
         <%= f.text_field :first_name, placeholder: "First name", autofocus: true %><br>
         <%= f.text_field :last_name, placeholder: "Last name" %><br>
