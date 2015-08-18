@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   end
 
   def new
+    # disable nav bar
+    @disable_nav = true
     if current_user
       redirect_to "/canopy-#{@user[:username]}"
 
