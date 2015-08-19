@@ -11,8 +11,8 @@
         <%= f.email_field :email, placeholder: "Email", class: "form-control"%> <br>
         <%= f.text_field :location, placeholder: "Location", class: "form-control" %><br>
         <%= f.text_field :bio, placeholder: "Bio: tell us about yourself.", class: "form-control" %><br>
-        <%= f.text_field :github, placeholder: "Link to your Github", class: "form-control" %><br>
-        <%= f.text_field :linkedin, placeholder: "Linked In profile page", class: "form-control" %><br>
+        <%= f.url_field :github, placeholder: "Link to your Github", class: "form-control" %><br>
+        <%= f.url_field :linkedin, placeholder: "Linked In profile page", class: "form-control" %><br>
         <%= f.text_field :job_title, placeholder: "Job Title", class: "form-control" %><br>
         <%= f.text_field :stack, placeholder: "List your skills and specialties", class: "form-control" %><br>
         <%= f.file_field :avatar %><br>
