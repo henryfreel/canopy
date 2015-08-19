@@ -1,48 +1,47 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 @import 'styles';
 
-.row {
-	margin-top: 0px;
-
-}
-.text-center{
-	margin-top: 0px;
+.project-preview-container {
+	// background-color: red;
+	overflow: hidden;
+	padding-bottom: 30px;
 }
 
-#new-project-form {
-	margin-top: 10px;
-	padding: 40px;
+.project-preview-content {
 	border: 1px solid $grey;
-	border-radius: 4px;
-	background-color:$white;
+	padding: 15px;
+	border-radius: 3px;
 }
 
-#edit-project-form {
-	margin-top: 10px;
-	padding: 40px;
-	border: 1px solid $grey;
-	border-radius: 4px;
-	background-color:$white;
+.project-preview-image {
+	height: 200px;
+	width: 100%;
+	background-size: cover;
+	background-position:center top;
+	margin-bottom: 15px;
 }
 
-body {
-	// background-color:$grey-light;
+.project-preview-info {
+	width: 100%;
+	height: 40px;
+	// background-color:red;
 }
 
-.input-button {
-	text-transform: uppercase;
-	font-size: 16px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+.project-preview-avatar {
+	background-size: cover;
+	background-position: center;
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
 }
 
-.input-button:hover {
-	background-color: $primary-color-dark;
+.project-preview-username {
+	display: inline-block;
+	margin-left: 10px;
+	position: relative;
+	top: -15px;
 }
-
-.form-control {
-	height: 42px;
-}
-
