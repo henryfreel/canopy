@@ -8,8 +8,23 @@
       <p><%= @project.github_url %></p>
       <pre><code><%= @project.snippet %><br></code></pre>
 
-      <%= link_to "Edit project", edit_project_path(@project) %>
-      <%= link_to "Delete project", @project, method: :delete, data: { confirm: 'Are you want to delete this project?'} %>
+      <% if current_user %>
+        <a href="javascript:void(0)" class="like-project" data-id="<%= @project.id %>">
+          <% if current_user.liked_projects.include? @project %>
+            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <span class="like-project-text">Unlike</span>
+          <% else %>
+            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span> <span class="like-project-text">Like</span>
+          <% end %>
+        </a><br>
+      <% end %>
+
+      <br>
+
+      <% if current_user %>
+        <%= link_to "Edit project", edit_project_path(@project) %>
+        <%= link_to "Delete project", @project, method: :delete, data: { confirm: 'Are you want to delete this project?'} %>
+      <% end %>
+
     </div>
   </div>
 </div>
