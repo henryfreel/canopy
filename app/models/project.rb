@@ -1,6 +1,9 @@
 class Project < ActiveRecord::Base
   belongs_to :user
   
+  has_many :likes
+  has_many :users, through: :likes
+
   before_save :screenshot_from_url
 
   validates :title, :live_url, :github_url,
