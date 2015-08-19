@@ -4,12 +4,15 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	padding-top: 75px;
+	background-color: $grey-light;
 }
 
 /* - - - - - - - - Main Nav - - - - - - - - */
 
 #navbar {
 	background-color: $grey-darkest;
+	// background-color: $primary-color;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 5px rgba(0,0,0,.075);
 }
 
 #navbar-brand {
@@ -64,7 +67,7 @@ body {
 
 .navbar .btn {
 	margin-top: 13px;
-	margin-right: 10px;
+	margin-left: 10px;
 	padding-top: 7px;
 	padding-bottom: 7px;
 	padding-left: 20px;
@@ -86,6 +89,10 @@ body {
 	background-color: $grey-medium;
 }
 
+.navbar-nav > li {
+	height: 60px;
+}
+
 .navbar-nav > li > a {
     padding-top: 21px;
     padding-bottom: 19px;
@@ -95,7 +102,7 @@ body {
 
 .navbar-default .navbar-nav>li>a {
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 300;
     color: #A7A7A7;
 }
 
