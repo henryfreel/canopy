@@ -1,15 +1,18 @@
 class ProjectsController < ApplicationController
   def index
+    @user = current_user
     @projects = Project.all
     render :index
   end
 
   def show
+    @user = current_user
     @project = Project.find(params[:id])
     render :show
   end
 
   def new
+    @user = current_user
     @project = Project.new
     if current_user
       render :new
@@ -19,8 +22,11 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    @user = current_user
     if current_user
       project = Project.new(project_params)
+      project.screenshottmp = "http://api.screenshotmachine.com/?key=0ec8ed&size=E&format=PNG&url=#{project_params[:live_url]}"
+      p 'this is the project screenshot #{project.screenshottmp}'
       project.user_id = session[:user_id]
       if project.save
         flash[:notice] = 'Project created.'
@@ -35,11 +41,13 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @project = Project.find(params[:id])
     render :edit
   end
 
   def update
+    @user = current_user
     project = Project.find(params[:id])
     if current_user && current_user[:id] == project[:user_id]
       project.update_attributes(project_params)
