@@ -1,15 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h1>Post a new project</h1>
-
+    <div class="text-center">
+       <h1>Post A New Project</h1>
+    </div>  
+    <div class="col-md-8 col-md-offset-2" id="new-project-form">
       <%= form_for @project, :html => { :id => "project-form"} do |f| %>
-        <%= f.text_field :title, placeholder: "Project title", autofocus: true, :required => true %><br>
-        <%= f.text_field :live_url, placeholder: "Link to live project", id: "live_url", :required => true %><br>
-        <%= f.text_field :github_url, placeholder: "Link to Github repo" %><br>
-        <%= f.text_area :description, cols: "60", rows: "3", placeholder: "Describe your project", :required => true %><br>
-        <%= f.text_area :snippet, cols: "60", rows: "15", placeholder: "Add code snippets" %><br>
-        <%= f.submit "Create project" %><br>
+        <%= f.text_field :title, placeholder: "Project title", autofocus: true, :required => true, class: "form-control" %><br>
+        <%= f.text_field :live_url, placeholder: "Link to live project", id: "live_url", :required => true, class: "form-control" %><br>
+        <%= f.text_field :github_url, placeholder: "Link to Github repo" , class: "form-control"%><br>
+        <%= f.text_area :description, cols: "60", rows: "3", placeholder: "Describe your project", :required => true, class: "form-control" %><br>
+        <%= f.text_area :snippet, cols: "60", rows: "15", placeholder: "Add code snippets" , class: "form-control"%><br>
+        <%= f.submit "Create project", class: "btn btn-primary btn-block input-button"%><br>
 
       <% end %>
 
