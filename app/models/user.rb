@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+
   has_many :projects, dependent: :destroy
   has_secure_password
+  has_many :likes
+  has_many :liked_projects, through: :likes, source: :project
 
   def full_name
     "#{first_name} #{last_name}"
