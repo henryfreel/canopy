@@ -1,3 +1,47 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'styles';
+
+.project-preview-container {
+	// background-color: red;
+	overflow: hidden;
+	padding-bottom: 30px;
+}
+
+.project-preview-content {
+	border: 1px solid $grey;
+	padding: 15px;
+	border-radius: 3px;
+}
+
+.project-preview-image {
+	height: 200px;
+	width: 100%;
+	background-size: cover;
+	background-position:center top;
+	margin-bottom: 15px;
+}
+
+.project-preview-info {
+	width: 100%;
+	height: 40px;
+	// background-color:red;
+}
+
+.project-preview-avatar {
+	background-size: cover;
+	background-position: center;
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+}
+
+.project-preview-username {
+	display: inline-block;
+	margin-left: 10px;
+	position: relative;
+	top: -15px;
+}
