@@ -6,12 +6,12 @@
   	</div>
   	
   	<% @projects.each do |project| %>
-	    <div class="col-md-4 project-preview-container">
+	    <div class="col-md-3 project-preview-container">
 	    	<div class="project-preview-content">
 
-	    		<a href="/projects/<%= project.id %>"><h4><%= project.title %></h4></a>
 	    		<div class="project-preview-image" style="background-image: url(<%= project.screenshot.url %>);"></div>
 	    		<div class="project-preview-info">
+	    			<a class="project-preview-title" href="/projects/<%= project.id %>"><h4><%= project.title %></h4></a>
 	    			<div class="project-preview-avatar" style="background-image: url(<%= project.user.avatar %>);"></div>
 	    			<div class="project-preview-username"><%= project.user.username %></div>
 	    		</div>
