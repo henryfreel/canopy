@@ -3,6 +3,7 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
+	padding-top: 75px;
 }
 
 /* - - - - - - - - Main Nav - - - - - - - - */
@@ -15,7 +16,7 @@ body {
 	color: $white;
 	font-size: 24px;
 	height: 60px;
-	padding-top: 15px;
+	padding-top: 12.5px;
 	font-family: 'Quicksand', sans-serif;
 	letter-spacing: 0px;
 	margin-right: 10px;
@@ -24,8 +25,8 @@ body {
 #navbar-logo {
 	display: inline-block;
 	/*position: relative;*/
-	height: 30px;
-	width: 30px;
+	height: 35px;
+	width: 35px;
 	margin-right: 10px;
 	background-size: cover;
 	background-position: center;
@@ -34,13 +35,36 @@ body {
 
 #navbar-name {
 	position: relative;
-	top: -5px; 
+	top: -7.5px; 
 	display: inline-block;
+}
+
+#navbar-avatar {
+	height: 25px;
+	width: 25px;
+	background-size: cover;
+	background-position: center;
+	display: inline-block;
+	position: relative;
+	margin:0;
+	padding:0;
+	margin-right: 8px;
+	margin-top:-10px;
+	margin-bottom:-10px;
+	border-radius: 50%;
+	border: 2px solid $white;
+	top: -4px;
+}
+
+#navbar-username {
+	display: inline-block;
+	position: relative;
+	top: -1px;
 }
 
 .navbar .btn {
 	margin-top: 13px;
-	margin-left: 10px;
+	margin-right: 10px;
 	padding-top: 7px;
 	padding-bottom: 7px;
 	padding-left: 20px;
@@ -95,3 +119,25 @@ body {
 	color: #eeeeee;
 	background-color: $grey-dark;
 }
+
+pre {
+	font-size: 13px;
+    display: block;
+    padding: 6px;
+  	padding-left: 10px;
+  	padding-right: 10px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: $snippet-bg;
+    border: 1px solid $snippet-bg;
+    border-radius: 4px;
+}
+
+
+
+
+
