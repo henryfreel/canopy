@@ -25,8 +25,7 @@ class ProjectsController < ApplicationController
     @user = current_user
     if current_user
       project = Project.new(project_params)
-      project.screenshottmp = "http://api.screenshotmachine.com/?key=0ec8ed&size=E&format=PNG&url=#{project_params[:live_url]}"
-      p 'this is the project screenshot #{project.screenshottmp}'
+      project.screenshottmp = "http://api.screenshotmachine.com/?key=0ec8ed&size=M&format=PNG&url=#{project_params[:live_url]}"
       project.user_id = session[:user_id]
       if project.save
         flash[:notice] = 'Project created.'
