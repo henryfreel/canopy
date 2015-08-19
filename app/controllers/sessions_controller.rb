@@ -3,6 +3,10 @@ class SessionsController < ApplicationController
   def new
     # disable nav bar
     @disable_nav = true
+
+    # set background color
+    @login_page = true
+
     if current_user 
       redirect_to "/canopy-#{current_user[:username]}"
     else
