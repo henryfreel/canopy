@@ -48,6 +48,7 @@ class ProjectsController < ApplicationController
   def update
     @user = current_user
     project = Project.find(params[:id])
+    project.screenshottmp = "http://api.screenshotmachine.com/?key=0ec8ed&size=M&format=PNG&url=#{project_params[:live_url]}"
     if current_user && current_user[:id] == project[:user_id]
       project.update_attributes(project_params)
       redirect_to project_path(project)
