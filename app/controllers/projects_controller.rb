@@ -1,15 +1,18 @@
 class ProjectsController < ApplicationController
   def index
+    @user = current_user
     @projects = Project.all
     render :index
   end
 
   def show
+    @user = current_user
     @project = Project.find(params[:id])
     render :show
   end
 
   def new
+    @user = current_user
     @project = Project.new
     if current_user
       render :new
@@ -19,6 +22,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    @user = current_user
     if current_user
       project = Project.new(project_params)
       project.user_id = session[:user_id]
@@ -35,11 +39,13 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @project = Project.find(params[:id])
     render :edit
   end
 
   def update
+    @user = current_user
     project = Project.find(params[:id])
     if current_user && current_user[:id] == project[:user_id]
       project.update_attributes(project_params)
