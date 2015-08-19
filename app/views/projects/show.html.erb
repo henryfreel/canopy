@@ -2,11 +2,9 @@
   <div class="row">
     <div class="col-md-12">
 
-      <iframe src="<%= @project.screenshot.url %>" height="245" width="100%"></iframe> <!-- make sure each iframe is its own bootstrap col on homepage -->
+      <iframe src="<%= @project.screenshot.url %>" height="245" width="345"></iframe> <!-- make sure each iframe is its own bootstrap col on homepage -->
       <!-- set width to 100% for large iframes so that they adjust for page size -->
 
-
-      <div><%= image_tag @project.screenshot.url(:thumb) %> </div>
       <h1><%= @project.title %></h1>
      <p><%= @project.description %></p>
       <p><%= @project.live_url %></p>
