@@ -4,9 +4,9 @@ User.create(first_name: 'Test', last_name: 'Project', username: 'Test', email: '
 
 User.create(first_name: 'Zoe', last_name: 'Foss', username: 'Zoe', email: 'zoe@gmail.com', password: 'password', location: 'San Francisco', bio: 'Put a bird on it Helvetica Pitchfork tofu dreamcatcher, selvage Intelligentsia mumblecore shabby chic gastropub quinoa. Squid Odd Future Wes Anderson fashion axe Tumblr, pour-over pop-up YOLO next level. Pickled narwhal scenester mumblecore blog distillery. ', github: 'www.github.com/zoe', linkedin: 'www.linkedin.com/zoe', stack: 'Javascript, Ruby on Rails, Express', job_title: 'Web Developer')
 
-6.times do
+1.times do
   Project.create(
-  live_url: 'www.liveurl.herokuapp.com',
+  live_url: 'https://www.amazon.com/gp/gw/ajax/s.html',
   github_url: 'www.github.com/testproject',
   title: FFaker::Lorem.words(3).join(' '),
   description: FFaker::Lorem.words(20).join(' '),
@@ -30,9 +30,9 @@ User.create(first_name: 'Zoe', last_name: 'Foss', username: 'Zoe', email: 'zoe@g
 )
 end
 
-5.times do
+1.times do
   Project.create(
-  live_url: 'www.liveurl.herokuapp.com',
+  live_url: 'https://www.amazon.com/gp/gw/ajax/s.html',
   github_url: 'www.github.com/testproject',
   title: FFaker::Lorem.words(3).join(' '),
   description: FFaker::Lorem.words(20).join(' '),
@@ -56,9 +56,9 @@ end
 )
 end
 
-4.times do
+1.times do
   Project.create(
-  live_url: 'www.liveurl.herokuapp.com',
+  live_url: 'https://www.amazon.com/gp/gw/ajax/s.html',
   github_url: 'www.github.com/testproject',
   title: FFaker::Lorem.words(3).join(' '),
   description: FFaker::Lorem.words(20).join(' '),
