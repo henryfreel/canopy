@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'ffaker'
-
-gem 'pg'
+gem 'screencap'
 
 gem 'aws-sdk', '~> 1.6'
 
