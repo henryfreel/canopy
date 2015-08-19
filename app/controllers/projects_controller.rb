@@ -61,7 +61,7 @@ class ProjectsController < ApplicationController
     project = Project.find(params[:id])
     if current_user.projects.include?(project)
       project.destroy
-      redirect_to profile_path
+      redirect_to "/canopy-#{current_user[:username]}"
     else
       redirect_to root_path
     end
