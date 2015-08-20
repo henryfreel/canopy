@@ -21,7 +21,7 @@ body {
 	height: 60px;
 	padding-top: 12.5px;
 	font-family: 'Quicksand', sans-serif;
-	letter-spacing: 0px;
+	letter-spacing: -1px;
 	margin-right: 10px;
 }
 
@@ -57,6 +57,10 @@ body {
 	border-radius: 50%;
 	border: 2px solid $white;
 	top: -4px;
+}
+
+#navbar-right {
+	float: right;
 }
 
 #navbar-username {
@@ -100,6 +104,21 @@ body {
     padding-right: 10px;
 }
 
+.navbar-nav > li > a.navbar-action {
+    padding-top: 16px;
+    padding-bottom: 13px;
+    margin: 0;
+}
+
+.navbar-action-span {
+	font-size: 27px;
+}
+
+.navbar-default {
+	border: none;
+    border-color: $grey-darkest;
+}
+
 .navbar-default .navbar-nav>li>a {
 	font-size: 14px;
 	font-weight: 300;
@@ -125,6 +144,15 @@ body {
 .navbar-nav > li > a.btn.btn-default:hover {
 	color: #eeeeee;
 	background-color: $grey-dark;
+}
+
+.navbar ul.dropdown-menu {
+	background-color: $grey-darkest;
+}
+
+.navbar ul.dropdown-menu li a {
+	font-weight: 300;
+	color: $grey;
 }
 
 iframe {
