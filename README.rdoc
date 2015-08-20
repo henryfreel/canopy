@@ -15,6 +15,6 @@ Steps to take everytime database or migrations change:
 4. restart rails server
 
 Testing Images in markdown
-[erm model](/app/assets/images/CanopyERM.jpg?raw=true "Canopy ERM")
+[erm model](./app/assets/images/CanopyERM.jpg "Canopy ERM")
 
-![Alt text](/app/assets/images/CanopyERM.jpg? "Canopy ERM")
+![Alt text](CanopyERM.jpg "Canopy ERM")
