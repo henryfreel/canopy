@@ -1,17 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h1>Edit project information</h1>
-
-      <%= form_for @project do |f| %>
-        <%= f.text_field :title, placeholder: "Project title", autofocus: true, :required => true %><br>
-        <%= f.text_field :live_url, placeholder: "Link to live project", :required => true %><br>
-        <%= f.text_field :github_url, placeholder: "Link to Github repo" %><br>
-        <%= f.text_area :description, cols: "60", rows: "3", placeholder: "Describe your project", :required => true %><br>
-        <%= f.text_area :snippet, cols: "60", rows: "15", placeholder: "Add code snippets" %><br>
-        <%= f.submit "Save changes" %><br>
-
-      <% end %>
-    </div>
+    <div class="text-center">
+        <h1>Edit Project Information</h1>
+    </div> 
+        <%= render "form" %>
   </div>
 </div>
