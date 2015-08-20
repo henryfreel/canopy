@@ -1,4 +1,4 @@
-== "Project Snorkel"
+Canopy
 
 First time cloning locally:
 1. copy project url from master repo
@@ -17,4 +17,4 @@ Steps to take everytime database or migrations change:
 Testing Images in markdown
 [erm model](./app/assets/images/CanopyERM.jpg "Canopy ERM")
 
-![Alt text](CanopyERM.jpg "Canopy ERM")
+![Alt text](/app/assets/images/CanopyERM.jpg "Canopy ERM")
