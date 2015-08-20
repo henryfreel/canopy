@@ -1,23 +1,23 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-8">
-      <div class="row"> <!-- start of iframe row -->
-        <div class="col-md-12">
-          <iframe src="<%= @project.live_url %>" height="445" width="100%"></iframe> <br><br><br>
-        </div>
-      </div> <!-- end of iframe row-->
-      <div class="row"> <!-- start of snippet row -->
-        <div class="col-md-12">
-        <pre><code><%= @project.snippet %><br></code></pre>
-        </div>
-      </div> <!-- end of snippet row -->
-    </div>
-    <div class="col-sm-4"> <!-- beginning of details -->
-      <div class="well">
+
+    
+
+    <div class="col-sm-3"> <!-- beginning of details -->
+      <!-- <div class="well"> -->
         <h2><%= @project.title %></h2>
         <p><strong>Project by:</strong> <a href="/canopy-<%= @project.user.username %>"><%= @project.user.full_name %></a></p>
         <p><a href="<%= @project.live_url %>" target="_blank"><%= @project.live_url %></a></p>
         <p><a href="<%= @project.github_url %>" target="_blank"><%= @project.github_url %></a></p>
+
+        <% if @project.users.length > 1 %>
+          <p><%= @project.users.length %> Likes</p>
+        <% elsif @project.users.length < 1 %>
+          <p><%= @project.users.length %> Likes</p>
+        <% else %>
+          <p><%= @project.users.length %> Like</p>
+        <% end %>
+
         <% if current_user %>
           <a href="javascript:void(0)" class="like-project" data-id="<%= @project.id %>">
             <% if current_user.liked_projects.include? @project %>
@@ -32,8 +32,22 @@
           <%= link_to "Edit project", edit_project_path(@project) %>&nbsp &nbsp
           <%= link_to "Delete project", @project, method: :delete, data: { confirm: 'Do you want to delete this project?'} %>
         <% end %>
-      </div>
+      <!-- </div> -->
     </div> <!-- end of details -->
+
+    <div class="col-sm-9">
+      <div class="row"> <!-- start of iframe row -->
+        <div class="col-md-12">
+          <iframe src="<%= @project.live_url %>" height="445" width="100%"></iframe> <br><br><br>
+        </div>
+      </div> <!-- end of iframe row-->
+      <div class="row"> <!-- start of snippet row -->
+        <div class="col-md-12">
+        <pre><code><%= @project.snippet %><br></code></pre>
+        </div>
+      </div> <!-- end of snippet row -->
+    </div>
+
   </div> <!-- end of main row -->
 </div> <!-- end of container -->
 

@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
             
   validates_attachment :avatar, 
   						:content_type => { :content_type => ["image/jpeg", "image/gif", "image/png", "image/jpg"]},
-  						:size => { :in => 0..100.kilobytes}
+  						:size => { :in => 0..1000.kilobytes}
 
   def s3_credentials
   	{:bucket => ENV['S3_BUCKET'], :access_key_id => ENV['S3_PUBLIC_KEY'], :secret_access_key => ENV['S3_SECRET']}
