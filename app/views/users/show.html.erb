@@ -2,38 +2,40 @@
   <div class="row">
 
     <div class="col-md-3">
-      <div class="profile-avatar" style="background-image: url();">
-        <%= image_tag @user.avatar.url(:medium) %>
-      </div>
 
       <div class="profile-info">
 
-        <div class="project-info-item">
-          <p class="profile-info-title"><span class="fa fa-user fa-fw profile-info-icon"></span> <strong>Email</strong></p>
-          <p class="profile-info-data"><%= !@user.full_name.empty? ? @user.full_name : 'No Name Listed' %></p>
+        <div class="profile-avatar" style="background-image: url(<%= @user.avatar %>);">
         </div>
 
-        <div class="project-info-item">
-          <p class="profile-info-title"><span class="fa fa-map-marker fa-fw profile-info-icon"></span> <strong>Location</strong></p>
-          <p class="profile-info-data"><%= !@user.location.empty? ? @user.location : 'No Location Listed' %></p>
-        </div>
+        <p class="profile-name text-center"><%= !@user.full_name.empty? ? @user.full_name : 'No Name Listed' %></p>
 
-        <div class="project-info-item">
-          <p class="profile-info-title"><span class="fa fa-envelope fa-fw profile-info-icon"></span> <strong>Email</strong></p>
-          <p class="profile-info-data"><%= !@user.email.empty? ? @user.email : 'No Email Listed' %></p>
-        </div>
+        <p class="profile-location text-center"><%= !@user.location.empty? ? @user.location : 'No Location Listed' %></p>
 
-        <div class="project-info-item">
-          <p class="profile-info-title"><span class="fa fa-calendar fa-fw profile-info-icon"></span> <strong>Member Since</strong></p>
-          <p class="profile-info-data"><%= @user.created_at.strftime("%b %Y") || 'User Was Not Created' %></p>
+        <div class="profile-info-container">
+          <div class="project-info-item">
+            <p class="profile-info-title"><span class="fa fa-envelope fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= !@user.email.empty? ? @user.email : 'No Email Listed' %></strong></p>
+          </div>
+
+          <div class="project-info-item">
+            <p class="profile-info-title"><span class="fa fa-calendar fa-fw profile-info-icon"></span> <strong class="profile-info-title-text">Member Since <%= @user.created_at.strftime("%b %Y") || 'User Was Not Created' %></strong></p>
+          </div>
+
+          <% if !@user.github.empty? %>
+          <div class="project-info-item">
+            <p class="profile-info-title"><span class="fa fa-github fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= @user.github %></strong></p>
+          </div>
+          <% end %>
+
+          <div class="project-info-item bio">
+            <p class="profile-info-bio"><%= @user.bio %></p>
+          </div>
         </div>
 
       </div>
 
-      <p><b>Bio:</b> <%= @user.bio %></p>
-
       <% if current_user && current_user[:id] == @user.id %>
-        <%= link_to "Edit my profile", edit_user_path(@user.username) %><br>
+        <%= link_to "Edit Profile", edit_user_path(@user.username), class: "btn btn-default" %><br>
       <% end %>
 
     </div>
