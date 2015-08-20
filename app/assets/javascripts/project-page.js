@@ -5,12 +5,12 @@ $(function() {
 		var $likeButton = $('.like-project').find('span')
 		console.log($likeButton)
 
-		if ($likeButton.hasClass('unselected')) {
+		if ($likeButton.hasClass('heart-unselected')) {
 
 			$('.like-project-text').text('Unlike')
 			liked = true;
 			var $heart = $(this).find('.glyphicon');
-			$heart.addClass('selected').removeClass('unselected');
+			$heart.addClass('heart-selected').removeClass('heart-unselected');
 
 			$.post('/likes', {
 				like: { project_id: $(this).attr('data-id') }
@@ -24,7 +24,7 @@ $(function() {
 			$('.like-project-text').text('Like')
 			liked = false;
 			var $heart = $(this).find('.glyphicon');
-			$heart.addClass('unselected').removeClass('selected');
+			$heart.addClass('heart-unselected').removeClass('heart-selected');
 
 			$.ajax({
 			  type: 'DELETE',

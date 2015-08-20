@@ -13,13 +13,9 @@
 #login-form {
 	margin-top: 80px;
 	padding: 40px;
-	border: 1px solid $grey;
-	border-radius: 4px;
+	box-shadow: $box-shadow;
+	border-radius: $border-radius;
 	background-color:$white;
-}
-
-body {
-	// background-color:$grey-light;
 }
 
 .input-button {
