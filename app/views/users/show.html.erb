@@ -8,23 +8,23 @@
         <div class="profile-avatar" style="background-image: url(<%= @user.avatar %>);">
         </div>
 
-        <p class="profile-name text-center"><%= !@user.full_name.empty? ? @user.full_name : 'No Name Listed' %></p>
+        <p class="profile-name text-center"><%= !@user.full_name || !@user.full_name.empty?  ? @user.full_name : 'No Name Listed' %></p>
 
-        <p class="profile-location text-center"><%= !@user.location.empty? ? @user.location : 'No Location Listed' %></p>
+        <p class="profile-location text-center"><%= !@user.location || !@user.location.empty? ? @user.location : 'No Location Listed' %></p>
 
         <div class="profile-info-container">
           <div class="project-info-item">
-            <p class="profile-info-title"><span class="fa fa-envelope fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= !@user.email.empty? ? @user.email : 'No Email Listed' %></strong></p>
+            <p class="profile-info-title"><span class="fa fa-envelope fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= !@user.email || !@user.email.empty?  ? @user.email : 'No Email Listed' %></strong></p>
           </div>
 
           <div class="project-info-item">
             <p class="profile-info-title"><span class="fa fa-calendar fa-fw profile-info-icon"></span> <strong class="profile-info-title-text">Member Since <%= @user.created_at.strftime("%b %Y") || 'User Was Not Created' %></strong></p>
           </div>
 
-          <% if !@user.github.empty? %>
-          <div class="project-info-item">
-            <p class="profile-info-title"><span class="fa fa-github fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= @user.github %></strong></p>
-          </div>
+          <% if @user.github %>
+            <div class="project-info-item">
+              <p class="profile-info-title"><span class="fa fa-github fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= @user.github %></strong></p>
+            </div>
           <% end %>
 
           <div class="project-info-item bio">
