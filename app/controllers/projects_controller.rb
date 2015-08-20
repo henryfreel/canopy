@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   def index
+    @projects_page = true
     @user = current_user
     @projects = Project.all
     render :index
