@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     if user.update_attributes(user_params)
       redirect_to "/canopy-#{user[:username]}"
     else
-      flash[:notice] = user.error
+      flash[:error] = user.errors.full_messages.join(", ")
       redirect_to :back
     end
   end
