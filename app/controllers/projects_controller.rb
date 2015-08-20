@@ -51,7 +51,14 @@ class ProjectsController < ApplicationController
     project.screenshottmp = "http://api.screenshotmachine.com/?key=0ec8ed&size=E&format=PNG&url=#{project_params[:live_url]}"
     if current_user && current_user[:id] == project[:user_id]
       project.update_attributes(project_params)
-      redirect_to project_path(project)
+      if project.save
+         flash[:notice] = 'Project updated.'
+         redirect_to project_path(project)
+      else
+        flash[:error] = project.errors.full_messages.join(", ")
+        redirect_to edit_project_path
+    end
+     
     else
       redirect_to root_path
     end

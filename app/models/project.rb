@@ -30,7 +30,7 @@ class Project < ActiveRecord::Base
             
   validates_attachment :screenshot, 
               :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png", "image/jpg"]},
-              :size => { :in => 0..100.kilobytes}
+              :size => { :in => 0..10000.kilobytes}
 
 
   def screenshot_from_url
