@@ -25,7 +25,7 @@
 	    		<div class="project-preview-info">
 	    			<a class="project-preview-title" href="/projects/<%= project.id %>"><h4><%= project.title %></h4></a>
 	    			<div class="project-preview-heart">
-		    			<% if current_user.liked_projects.include? project %>
+		    			<% if current_user && current_user.liked_projects.include?(project) %>
 		    			  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span><span class="like-project-text"></span>
 		    			<% else %>
 		    			  <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span><span class="like-project-text"></span>
@@ -40,7 +40,7 @@
 	    			</div>
 	    			
 	    			<div class="project-preview-avatar" style="background-image: url(<%= project.user.avatar %>);"></div>
-	    			<a href="/canopy-<%= current_user.username %>"><div class="project-preview-username"><%= project.user.username %></div></a>
+	    			<a href="/canopy-<%= project.user.username %>"><div class="project-preview-username"><%= project.user.username %></div></a>
 	    		</div>
 
 	    	</div>
