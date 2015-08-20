@@ -1,27 +1,45 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
 
-      <h1>Our Community</h1>
-      <% @users.each do |user| %>
-        <div class="row">
-          <div class="col-md-12 well">
-            <div class="row">
-              <div class="col-md-3">
-                <%= image_tag user.avatar.url(:thumb), height: '80', width: '80', class: 'img-circle' %>
-              </div>
-              <div class="col-md-9">
-                <strong><big><a href="/canopy-<%= user.username %>"><%= user.full_name %></a></strong></big><br>
-                <%= user.location %><br>
-                <%= user.stack %><br>
-                <br>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
+    <div class="col-md-12 page-header">
 
+      <h3>Developers</h3>
+
+      <div class="btn-group sort-by">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Most Recent &nbsp <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+        </ul>
+      </div>  
     </div>
+
+    <% @users.order(:first_name).limit(20).each do |user| %>
+
+      <div class="col-md-6">
+
+        <div class="developer-container">
+
+          <div class="developer-avatar-container">
+            <div class="developer-avatar" style="background-image: url(<%= user.avatar %>) ;"></div>
+          </div>
+
+          <div class="developer-info-container">
+            <a href="/canopy-<%= user.username %>"><%= user.full_name %></a>
+            <p><%= user.location %></p>
+            <p><%= user.stack %></p>
+            <br>
+          </div>
+
+        </div>
+
+      </div>
+
+    <% end %>
+
   </div>
 </div>
 
