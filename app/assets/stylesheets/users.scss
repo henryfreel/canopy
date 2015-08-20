@@ -4,6 +4,8 @@
 
 @import 'styles';
 
+/* - - - - - - - - Sign Up Page - - - - - - - - */
+
 .signup-page {
 	background-color: $grey-light;
 }
@@ -46,3 +48,70 @@ body {
 #multipart{
 	background-color:red
 }
+
+
+/* - - - - - - - - Profile Page - - - - - - - - */
+
+.profile-info {
+	// background-color: red;
+	padding: 0px;
+	margin-top: 20px;
+}
+
+.project-info-item {
+	// background-color: yellow;
+	padding: 5px 0px 5px 0px;
+}
+
+.profile-info-title {
+	display: inline-block;
+	// background-color: blue;
+	margin-bottom: 0;
+}
+
+.profile-info-icon {
+	margin-right: 2px;
+}
+
+.profile-info-data {
+	display: inline-block;
+	float: right;
+	margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
