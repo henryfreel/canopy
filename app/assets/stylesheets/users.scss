@@ -13,25 +13,21 @@
 #signup-form {
 	margin-top: 10px;
 	padding: 40px;
-	border: 1px solid $grey;
-	border-radius: 4px;
+	box-shadow: $box-shadow;
+	border-radius: $border-radius;
 	background-color:$white;;
 }
 
-#edit-user-form{
+#edit-user-form {
 	margin-top: 10px;
 	padding: 40px;
-	border: 1px solid $grey;
-	border-radius: 4px;
+	box-shadow: $box-shadow;
+	border-radius: $border-radius;
 	background-color:$white;;
 }
 
 .form-control {
 	height: 42px;
-}
-
-body {
-	// background-color:$grey-light;
 }
 
 .input-button {
@@ -42,6 +38,10 @@ body {
 }
 
 .input-button:hover {
+	background-color: $primary-color-dark;
+}
+
+#edit-user-form .input-button:active {
 	background-color: $primary-color-dark;
 }
 
@@ -140,6 +140,37 @@ body {
 	padding-top: 0;
 }
 
+/* - - - - - - - - Developers Page - - - - - - - - */
+
+.developer-container {
+	box-shadow: $box-shadow;
+	padding: 10px;
+	border-radius: $border-radius;
+	background-color: $white;
+	margin-bottom: 30px;
+}
+
+.developer-avatar-container {
+	display: inline-block;
+	// background-color: blue;
+}
+
+.developer-avatar {
+	height: 100px;
+	width: 100px;
+	background-size: cover;
+	background-position: center;
+	border-radius: 50%;
+	border: 5px solid $white;
+	box-shadow: $box-shadow;
+}
+
+.developer-info-container {
+	padding-left: 10px;
+	display: inline-block;
+	width: 60%;
+	// background-color: red;
+}
 
 
 
