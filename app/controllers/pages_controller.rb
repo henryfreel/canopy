@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def show
+  	@about_page = true
   end
 end
