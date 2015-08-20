@@ -59,6 +59,10 @@ body {
 	top: -4px;
 }
 
+#navbar-right {
+	float: right;
+}
+
 #navbar-username {
 	display: inline-block;
 	position: relative;
@@ -100,6 +104,21 @@ body {
     padding-right: 10px;
 }
 
+.navbar-nav > li > a.navbar-action {
+    padding-top: 16px;
+    padding-bottom: 13px;
+    margin: 0;
+}
+
+.navbar-action-span {
+	font-size: 27px;
+}
+
+.navbar-default {
+	border: none;
+    border-color: $grey-darkest;
+}
+
 .navbar-default .navbar-nav>li>a {
 	font-size: 14px;
 	font-weight: 300;
@@ -125,6 +144,15 @@ body {
 .navbar-nav > li > a.btn.btn-default:hover {
 	color: #eeeeee;
 	background-color: $grey-dark;
+}
+
+.navbar ul.dropdown-menu {
+	background-color: $grey-darkest;
+}
+
+.navbar ul.dropdown-menu li a {
+	font-weight: 300;
+	color: $grey;
 }
 
 iframe {
