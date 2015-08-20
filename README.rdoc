@@ -14,5 +14,7 @@ Steps to take everytime database or migrations change:
 3. rake db:seed
 4. restart rails server
 
-TODO Monday
-1. clarify Git procedure
+Testing Images in markdown
+![Alt text](/app/assets/images/CanopyERM.jpg?raw=true "Canopy ERM")
+
+![Alt text](/app/assets/images/CanopyERM.jpg? "Canopy ERM")
