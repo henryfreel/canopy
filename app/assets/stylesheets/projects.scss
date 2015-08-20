@@ -26,8 +26,6 @@
 }
 
 .project-preview-container {
-	// background-color: red;
-	// overflow: hidden;
 	padding-bottom: 30px;
 }
 
@@ -39,12 +37,24 @@
 	background-color: $white;
 }
 
+.project-preview-content a {
+	text-decoration: none;
+}
+
+.project-preview-content a:hover {
+	color: $primary-color-dark;
+}
+
+.project-preview-content:hover {
+	box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+}
+
 .project-preview-image {
 	height: 150px;
 	width: 100%;
 	background-size: cover;
 	background-position:center top;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 }
 
 .project-preview-info {
@@ -54,14 +64,33 @@
 }
 
 .project-preview-title {
-	display: block;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 400;
+	color: $grey-dark;
 }
 
 .project-preview-heart {
 	// display: inline-block;
 	// background-color: red;
+	font-size: 12px;
+	font-weight: 400;
+	color: $grey-dark;
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
+}
+
+.glyphicon-heart {
+	color: $grey;
+}
+
+.selected {
+	color: $primary-color;
+}
+
+.project-preview-user {
+	margin-top: 10px;
+	height: 25px;
 }
 
 .project-preview-avatar {
@@ -75,6 +104,9 @@
 }
 
 .project-preview-username {
+	color: $grey-dark;
+	font-weight: 400;
+	font-size: 12px; 
 	display: inline-block;
 	margin-left: 5px;
 	position: relative;

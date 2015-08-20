@@ -17,12 +17,32 @@
 
         <% if current_user.projects.any? %>
           <h3>My projects</h3>
-          <% @user.projects.reverse.each do |project| %>
-            <strong><%= project.title %></strong><br>
-            <%= project.description %><br>
-            <%= link_to "View", project_path(project) %><br>
-            <br>
-          <% end %>
+          <% @user.projects.reverse_each do |project| %>
+                <div class="col-xs-3 project-preview-container">
+                  <div class="project-preview-content">
+
+                    <a href="/projects/<%= project.id %>"><div class="project-preview-image" style="background-image: url(<%= project.screenshot.url %>);"></div></a>
+                    <div class="project-preview-info">
+                      <a class="project-preview-title" href="/projects/<%= project.id %>"><%= project.title %></a>
+                      <div class="project-preview-heart">
+                        <% if current_user.liked_projects.include? project %>
+                          <span class="glyphicon glyphicon-heart selected" aria-hidden="true"></span><span class="like-project-text"></span>
+                        <% else %>
+                          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span><span class="like-project-text"></span>
+                        <% end %>
+                        <% if project.users.length > 1 %>
+                          <%= project.users.length %> Likes
+                        <% elsif project.users.length < 1 %>
+                          <%= project.users.length %> Likes
+                        <% else %>
+                          <%= project.users.length %> Like
+                        <% end %>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              <% end %>
         <% else %>
           <p>You don't have any projects yet.</p>
         <% end %>
