@@ -14,7 +14,6 @@ class ProjectsController < ApplicationController
   def new
     # @user = current_user
     @project = Project.new
-    p @project
     if current_user
       render :new
     else
@@ -30,11 +29,9 @@ class ProjectsController < ApplicationController
       project.user_id = session[:user_id]
       if project.save
         flash[:notice] = 'Project created.'
-        p "!!!!!!!!!!!!redirect to project path"
         redirect_to project_path(project)
       else
         flash[:error] = project.errors.full_messages.join(", ")
-        p "!!!!!!!!!!!!!redirect to new project path"
         redirect_to new_project_path
       end
     else
