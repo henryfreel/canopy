@@ -18,8 +18,6 @@ class Project < ActiveRecord::Base
       with: /https:/, 
       message: "must start with https://"
     }
-  validates :snippet, 
-    length: {maximum: 500}
 
   attr_accessor :screenshottmp
 
