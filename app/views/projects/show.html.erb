@@ -34,7 +34,7 @@
             <% if current_user.liked_projects.include? @project %>
               <span class="glyphicon glyphicon-heart selected" aria-hidden="true"></span> <span class="like-project-text">Unlike</span>
             <% else %>
-              <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <span class="like-project-text">Like</span>
+              <span class="glyphicon glyphicon-heart unselected" aria-hidden="true"></span> <span class="like-project-text">Like</span>
             <% end %>
           </a><br>
         <% end %>
