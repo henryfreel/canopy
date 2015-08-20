@@ -21,7 +21,7 @@
             <p class="profile-info-title"><span class="fa fa-calendar fa-fw profile-info-icon"></span> <strong class="profile-info-title-text">Member Since <%= @user.created_at.strftime("%b %Y") || 'User Was Not Created' %></strong></p>
           </div>
 
-          <% if @user.github || !@user.github.empty? %>
+          <% if @user.github %>
             <div class="project-info-item">
               <p class="profile-info-title"><span class="fa fa-github fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= @user.github %></strong></p>
             </div>
