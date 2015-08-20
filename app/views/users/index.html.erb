@@ -1,15 +1,31 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3 well">
+    <div class="col-sm-6 col-sm-offset-3">
+
       <h1>All Users</h1>
-        <% @users.each do |user| %>
-          <strong><%= user.username %></strong><br>
-          <%= user.location %><br>
-          <%= user.github %><br>
-          <%= user.linkedin %><br>
-          <%= user.bio %><br>
-          <br>
-        <% end %>
+      <% @users.each do |user| %>
+        <div class="row">
+          <div class="col-md-12 well">
+            <div class="row">
+              <div class="col-md-4"><center>
+                <%= image_tag user.avatar.url(:thumb), height: '80', width: '80', class: 'img-circle' %></center>
+              </div>
+              <div class="col-md-8">
+                <strong><big><a href="/canopy-<%= user.username %>"><%= user.full_name %></a></strong></big><br>
+                <%= user.location %><br>
+                <%= user.stack %><br>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
     </div>
   </div>
 </div>
+
+
+
+
+
