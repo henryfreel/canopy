@@ -1,31 +1,78 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h1>Hello, <%= @user.username %></h1>
-      <div>
-        <%= image_tag @user.avatar.url(:thumb) %>
+
+    <div class="col-md-3">
+
+      <div class="profile-info">
+
+        <div class="profile-avatar" style="background-image: url(<%= @user.avatar %>);">
+        </div>
+
+        <p class="profile-name text-center"><%= !@user.full_name.empty? ? @user.full_name : 'No Name Listed' %></p>
+
+        <p class="profile-location text-center"><%= !@user.location.empty? ? @user.location : 'No Location Listed' %></p>
+
+        <div class="profile-info-container">
+          <div class="project-info-item">
+            <p class="profile-info-title"><span class="fa fa-envelope fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= !@user.email.empty? ? @user.email : 'No Email Listed' %></strong></p>
+          </div>
+
+          <div class="project-info-item">
+            <p class="profile-info-title"><span class="fa fa-calendar fa-fw profile-info-icon"></span> <strong class="profile-info-title-text">Member Since <%= @user.created_at.strftime("%b %Y") || 'User Was Not Created' %></strong></p>
+          </div>
+
+          <% if !@user.github.empty? %>
+          <div class="project-info-item">
+            <p class="profile-info-title"><span class="fa fa-github fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= @user.github %></strong></p>
+          </div>
+          <% end %>
+
+          <div class="project-info-item bio">
+            <p class="profile-info-bio"><%= @user.bio %></p>
+          </div>
+        </div>
+
       </div>
-      <p><b>Name:</b> <%= @user.full_name %></p>
-      <p><b>Email:</b> <%= @user.email %></p>
-      <p><b>Joined on:</b> <%= @user.created_at %></p>
-      <p><b>Current location:</b> <%= @user.location %></p>
-      <p><b>Bio:</b> <%= @user.bio %></p>
 
       <% if current_user && current_user[:id] == @user.id %>
-        <%= link_to "Edit my profile", edit_user_path(@user.username) %><br>
+        <%= link_to "Edit Profile", edit_user_path(@user.username), class: "btn btn-default" %><br>
       <% end %>
 
-        <% if current_user && current_user.projects.any? %>
-          <h3>My projects</h3>
-          <% @user.projects.reverse.each do |project| %>
-            <strong><%= project.title %></strong><br>
-            <%= project.description %><br>
-            <%= link_to "View", project_path(project) %><br>
-            <br>
+    </div>
+
+    <div class="col-md-9">
+
+      <% if @user.projects.any? %>
+        <% @user.projects.reverse_each do |project| %>
+              <div class="col-xs-4 project-preview-container">
+                <div class="project-preview-content">
+
+                  <a href="/projects/<%= project.id %>"><div class="project-preview-image" style="background-image: url(<%= project.screenshot.url %>);"></div></a>
+                  <div class="project-preview-info">
+                    <a class="project-preview-title" href="/projects/<%= project.id %>"><%= project.title %></a>
+                    <div class="project-preview-heart">
+                      <% if current_user.liked_projects.include? project %>
+                        <span class="glyphicon glyphicon-heart selected" aria-hidden="true"></span><span class="like-project-text"></span>
+                      <% else %>
+                        <span class="glyphicon glyphicon-heart unselected" aria-hidden="true"></span><span class="like-project-text"></span>
+                      <% end %>
+                      <% if project.users.length > 1 %>
+                        <%= project.users.length %> Likes
+                      <% elsif project.users.length < 1 %>
+                        <%= project.users.length %> Likes
+                      <% else %>
+                        <%= project.users.length %> Like
+                      <% end %>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
           <% end %>
-        <% else %>
-          <p>You don't have any projects yet.</p>
-        <% end %>
+      <% else %>
+        <p class="text-center">No projects yet :(</p>
+      <% end %>
+
     </div>
   </div>
 </div>
