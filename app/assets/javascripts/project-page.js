@@ -10,7 +10,7 @@ $(function() {
 			$('.like-project-text').text('Unlike')
 			liked = true;
 			var $heart = $(this).find('.glyphicon');
-			$heart.removeClass('glyphicon-heart-empty').addClass('glyphicon-heart');
+			$heart.removeClass('selected')
 
 			$.post('/likes', {
 				like: { project_id: $(this).attr('data-id') }
@@ -24,7 +24,7 @@ $(function() {
 			$('.like-project-text').text('Like')
 			liked = false;
 			var $heart = $(this).find('.glyphicon');
-			$heart.removeClass('glyphicon-heart').addClass('glyphicon-heart-empty');
+			$heart.addClass('selected');
 
 			$.ajax({
 			  type: 'DELETE',
