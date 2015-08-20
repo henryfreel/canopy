@@ -1,19 +1,46 @@
 <div class="container">
   <div class="row">
 
-  	<div class="col-md-12">
-  		<h1>All Projects</h1>	
+  	<div class="col-md-12 page-header">
+
+  		<h3 class="">All Projects</h3>
+
+  		<div class="btn-group sort-by">
+  		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  		    Most Recent &nbsp <span class="caret"></span>
+  		  </button>
+  		  <ul class="dropdown-menu pull-right">
+  		    <li><a href="#">Action</a></li>
+  		    <li><a href="#">Another action</a></li>
+  		    <li><a href="#">Something else here</a></li>
+  		  </ul>
+  		</div>	
   	</div>
   	
-  	<% @projects.each do |project| %>
-	    <div class="col-md-3 project-preview-container">
+  	<% @projects.reverse_each do |project| %>
+	    <div class="col-xs-3 project-preview-container">
 	    	<div class="project-preview-content">
 
 	    		<div class="project-preview-image" style="background-image: url(<%= project.screenshot.url %>);"></div>
 	    		<div class="project-preview-info">
 	    			<a class="project-preview-title" href="/projects/<%= project.id %>"><h4><%= project.title %></h4></a>
+	    			<div class="project-preview-heart">
+		    			<% if current_user.liked_projects.include? project %>
+		    			  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span><span class="like-project-text"></span>
+		    			<% else %>
+		    			  <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span><span class="like-project-text"></span>
+		    			<% end %>
+		    			<% if project.users.length > 1 %>
+		    			  <%= project.users.length %> Likes
+		    			<% elsif project.users.length < 1 %>
+		    			  <%= project.users.length %> Likes
+		    			<% else %>
+		    			  <%= project.users.length %> Like
+		    			<% end %>
+	    			</div>
+	    			
 	    			<div class="project-preview-avatar" style="background-image: url(<%= project.user.avatar %>);"></div>
-	    			<div class="project-preview-username"><%= project.user.username %></div>
+	    			<a href="/canopy-<%= current_user.username %>"><div class="project-preview-username"><%= project.user.username %></div></a>
 	    		</div>
 
 	    	</div>
