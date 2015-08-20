@@ -5,6 +5,16 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :liked_projects, through: :likes, source: :project
 
+  validates :password, length: { minimum: 6 }, on: :create
+  validates :email, presence: true, uniqueness: true, format: {
+    with: /@/, 
+    message: "not a valid email format"
+  }
+  validates :linkedin, :github, presence: true, format: {
+    with: /https:/, 
+    message: "url must start with https://"
+  }
+
   def full_name
     "#{first_name} #{last_name}"
   end
