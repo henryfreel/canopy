@@ -6,10 +6,10 @@
     <div class="col-md-8 col-md-offset-2" id="edit-project-form">
         <%= form_for @project do |f| %>
         <%= f.text_field :title, placeholder: "Project title", autofocus: true, :required => true, class: "form-control" %><br>
-        <%= f.text_field :live_url, placeholder: "Link to live project", :required => true, class: "form-control" %><br>
-        <%= f.text_field :github_url, placeholder: "Link to Github repo", class: "form-control" %><br>
+        <%= f.url_field :live_url, placeholder: "Link to live project", :required => true, class: "form-control" %><br>
+        <%= f.url_field :github_url, placeholder: "Link to Github repo", class: "form-control" %><br>
         <%= f.text_area :description, cols: "60", rows: "3", placeholder: "Describe your project", :required => true, class: "form-control" %><br>
-        <%= f.text_area :snippet, cols: "60", rows: "15", placeholder: "Add code snippets", class: "form-control" %><br>
+        <%= f.text_area :snippet, cols: "60", rows: "15", :maxlength => 500,placeholder: "Add code snippets", class: "form-control" %><br>
         <%= f.submit "Save changes", class: "btn btn-primary btn-block input-button" %><br>
       <% end %>
     </div>

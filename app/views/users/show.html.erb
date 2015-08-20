@@ -15,7 +15,7 @@
         <%= link_to "Edit my profile", edit_user_path(@user.username) %><br>
       <% end %>
 
-        <% if current_user.projects.any? %>
+        <% if current_user && current_user.projects.any? %>
           <h3>My projects</h3>
           <% @user.projects.reverse.each do |project| %>
             <strong><%= project.title %></strong><br>
