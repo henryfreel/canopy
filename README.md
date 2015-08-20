@@ -14,7 +14,10 @@ Steps to take everytime database or migrations change:
 3. rake db:seed
 4. restart rails server
 
-Testing Images in markdown
-[erm model](./app/assets/images/CanopyERM.jpg "Canopy ERM")
-
+ERM
 ![Alt text](/app/assets/images/CanopyERM.jpg "Canopy ERM")
+
+WIREFRAMES
+![Alt text](/app/assets/images/Wireframe1.jpg "Wireframe - Project Page")
+![Alt text](/app/assets/images/Wireframe2.jpg "Wireframe - Project Flow")
+
