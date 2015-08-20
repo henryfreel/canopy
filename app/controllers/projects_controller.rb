@@ -12,8 +12,9 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @user = current_user
+    # @user = current_user
     @project = Project.new
+    p @project
     if current_user
       render :new
     else
@@ -22,16 +23,18 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @user = current_user
+    # @user = current_user
     if current_user
       project = Project.new(project_params)
       project.screenshottmp = "http://api.screenshotmachine.com/?key=0ec8ed&size=M&format=PNG&url=#{project_params[:live_url]}"
       project.user_id = session[:user_id]
       if project.save
         flash[:notice] = 'Project created.'
+        p "!!!!!!!!!!!!redirect to project path"
         redirect_to project_path(project)
       else
         flash[:error] = project.errors.full_messages.join(", ")
+        p "!!!!!!!!!!!!!redirect to new project path"
         redirect_to new_project_path
       end
     else
