@@ -1,51 +1,76 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h1>Hello, <%= @user.username %></h1>
-      <div>
-        <%= image_tag @user.avatar.url(:thumb) %>
+
+    <div class="col-md-3">
+      <div class="profile-avatar" style="background-image: url();">
+        <%= image_tag @user.avatar.url(:medium) %>
       </div>
-      <p><b>Name:</b> <%= @user.full_name %></p>
-      <p><b>Email:</b> <%= @user.email %></p>
-      <p><b>Joined on:</b> <%= @user.created_at %></p>
-      <p><b>Current location:</b> <%= @user.location %></p>
+
+      <div class="profile-info">
+
+        <div class="project-info-item">
+          <p class="profile-info-title"><span class="fa fa-user fa-fw profile-info-icon"></span> <strong>Email</strong></p>
+          <p class="profile-info-data"><%= !@user.full_name.empty? ? @user.full_name : 'No Name Listed' %></p>
+        </div>
+
+        <div class="project-info-item">
+          <p class="profile-info-title"><span class="fa fa-map-marker fa-fw profile-info-icon"></span> <strong>Location</strong></p>
+          <p class="profile-info-data"><%= !@user.location.empty? ? @user.location : 'No Location Listed' %></p>
+        </div>
+
+        <div class="project-info-item">
+          <p class="profile-info-title"><span class="fa fa-envelope fa-fw profile-info-icon"></span> <strong>Email</strong></p>
+          <p class="profile-info-data"><%= !@user.email.empty? ? @user.email : 'No Email Listed' %></p>
+        </div>
+
+        <div class="project-info-item">
+          <p class="profile-info-title"><span class="fa fa-calendar fa-fw profile-info-icon"></span> <strong>Member Since</strong></p>
+          <p class="profile-info-data"><%= @user.created_at.strftime("%b %Y") || 'User Was Not Created' %></p>
+        </div>
+
+      </div>
+
       <p><b>Bio:</b> <%= @user.bio %></p>
 
       <% if current_user && current_user[:id] == @user.id %>
         <%= link_to "Edit my profile", edit_user_path(@user.username) %><br>
       <% end %>
 
-        <% if current_user.projects.any? %>
-          <h3>My projects</h3>
-          <% @user.projects.reverse_each do |project| %>
-                <div class="col-xs-3 project-preview-container">
-                  <div class="project-preview-content">
+    </div>
 
-                    <a href="/projects/<%= project.id %>"><div class="project-preview-image" style="background-image: url(<%= project.screenshot.url %>);"></div></a>
-                    <div class="project-preview-info">
-                      <a class="project-preview-title" href="/projects/<%= project.id %>"><%= project.title %></a>
-                      <div class="project-preview-heart">
-                        <% if current_user.liked_projects.include? project %>
-                          <span class="glyphicon glyphicon-heart selected" aria-hidden="true"></span><span class="like-project-text"></span>
-                        <% else %>
-                          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span><span class="like-project-text"></span>
-                        <% end %>
-                        <% if project.users.length > 1 %>
-                          <%= project.users.length %> Likes
-                        <% elsif project.users.length < 1 %>
-                          <%= project.users.length %> Likes
-                        <% else %>
-                          <%= project.users.length %> Like
-                        <% end %>
-                      </div>
+    <div class="col-md-9">
+
+      <% if @user.projects.any? %>
+        <% @user.projects.reverse_each do |project| %>
+              <div class="col-xs-4 project-preview-container">
+                <div class="project-preview-content">
+
+                  <a href="/projects/<%= project.id %>"><div class="project-preview-image" style="background-image: url(<%= project.screenshot.url %>);"></div></a>
+                  <div class="project-preview-info">
+                    <a class="project-preview-title" href="/projects/<%= project.id %>"><%= project.title %></a>
+                    <div class="project-preview-heart">
+                      <% if current_user.liked_projects.include? project %>
+                        <span class="glyphicon glyphicon-heart selected" aria-hidden="true"></span><span class="like-project-text"></span>
+                      <% else %>
+                        <span class="glyphicon glyphicon-heart unselected" aria-hidden="true"></span><span class="like-project-text"></span>
+                      <% end %>
+                      <% if project.users.length > 1 %>
+                        <%= project.users.length %> Likes
+                      <% elsif project.users.length < 1 %>
+                        <%= project.users.length %> Likes
+                      <% else %>
+                        <%= project.users.length %> Like
+                      <% end %>
                     </div>
-
                   </div>
+
                 </div>
-              <% end %>
-        <% else %>
-          <p>You don't have any projects yet.</p>
-        <% end %>
+              </div>
+          <% end %>
+      <% else %>
+        <p class="text-center">No projects yet :(</p>
+      <% end %>
+
     </div>
   </div>
 </div>
