@@ -3,7 +3,7 @@
 
   	<div class="col-md-12 page-header">
 
-  		<h3 class="">All Projects</h3>
+  		<h3>All Projects</h3>
 
   		<div class="btn-group sort-by">
   		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -17,7 +17,7 @@
   		</div>	
   	</div>
   	
-  	<% @projects.reverse_each do |project| %>
+  	<% @projects.limit(20).reverse_each do |project| %>
 	    <div class="col-xs-3 project-preview-container">
 	    	<div class="project-preview-content">
 
