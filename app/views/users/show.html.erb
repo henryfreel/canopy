@@ -53,7 +53,7 @@
                   <div class="project-preview-info">
                     <a class="project-preview-title" href="/projects/<%= project.id %>"><%= project.title %></a>
                     <div class="project-preview-heart">
-                      <% if current_user.liked_projects.include? project %>
+                      <% if current_user && current_user.liked_projects.include?(project) %>
                         <span class="glyphicon glyphicon-heart heart-selected" aria-hidden="true"></span><span class="like-project-text"></span>
                       <% else %>
                         <span class="glyphicon glyphicon-heart heart-unselected" aria-hidden="true"></span><span class="like-project-text"></span>
@@ -72,7 +72,12 @@
               </div>
           <% end %>
       <% else %>
-        <p class="text-center">No projects yet :(</p>
+      <div id="no-projects">
+        <br>
+        <br>
+        <br>
+        <h3 class="text-center">No projects yet...</h3>
+      </div>
       <% end %>
 
     </div>
