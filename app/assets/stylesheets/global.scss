@@ -21,7 +21,7 @@ body {
 	height: 60px;
 	padding-top: 12.5px;
 	font-family: 'Quicksand', sans-serif;
-	letter-spacing: 0px;
+	letter-spacing: -1px;
 	margin-right: 10px;
 }
 
@@ -34,6 +34,28 @@ body {
 	background-size: cover;
 	background-position: center;
 	background-image: image-url("logo-green.svg");
+}
+
+#active-page {
+	font-weight: 400;
+	color: $grey-light;
+	// background-color: red;
+}
+
+#navbar form {
+	padding-right: 10px;
+}
+
+#search-bar {
+	border-color: $grey-dark;
+	margin-top: 5px;
+	height: 32px;
+}
+
+.form-control:focus {   
+  border-color: rgba(118, 152, 66, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(118, 152, 66, 0.6);
+  outline: 0 none;
 }
 
 #navbar-name {
@@ -59,6 +81,15 @@ body {
 	top: -4px;
 }
 
+#navbar .navbar-nav .open > a {
+	color: $grey-light;
+	background-color: $grey-darkest;
+}
+
+#navbar-right {
+	float: right;
+}
+
 #navbar-username {
 	display: inline-block;
 	position: relative;
@@ -77,7 +108,7 @@ body {
 }
 
 .btn {
-	border-radius: 3px;
+	border-radius: $border-radius;
 	border: none;
 }
 
@@ -98,6 +129,16 @@ body {
     padding-bottom: 19px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.navbar-nav > li > a.navbar-action {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-default {
+	border: none;
+    border-color: $grey-darkest;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -127,6 +168,43 @@ body {
 	background-color: $grey-dark;
 }
 
+/* - - - - - - - - Dropdown Menu - - - - - - - - */
+
+.dropdown-menu {
+	min-width: 140px;
+}
+
+.navbar ul.dropdown-menu {
+	background-color: $grey-darkest;
+	border-color: $grey-darkest;
+}
+
+.navbar ul.dropdown-menu li a {
+	font-weight: 300;
+	color: $grey;
+}
+
+.navbar ul.dropdown-menu li:hover {
+	background-color: $grey-dark;
+}
+
+.navbar ul.dropdown-menu li a:hover {
+	background-color: $grey-darkest;
+	font-weight: 400;
+	color: $grey-lightest;
+}
+
+.navbar ul.dropdown-menu li a:hover > span { color: $grey-lightest; }
+
+.dropdown-menu .divider {
+    height: 1px;
+    margin: 6px 0;
+    overflow: hidden;
+    background-color: $grey-dark;
+}
+
+/* - - - - - - - - iFrame - - - - - - - - */
+
 iframe {
 	border: none;
 	background-color: $grey;
@@ -147,7 +225,7 @@ pre {
     word-wrap: break-word;
     background-color: $snippet-bg;
     border: 1px solid $snippet-bg;
-    border-radius: 4px;
+    border-radius: $border-radius;
 }
 
 

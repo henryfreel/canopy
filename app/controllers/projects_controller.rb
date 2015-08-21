@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   def index
+    @projects_page = true
     @user = current_user
     @projects = Project.all
     render :index
@@ -12,7 +13,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @user = current_user
+    # @user = current_user
     @project = Project.new
     if current_user
       render :new
@@ -22,7 +23,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @user = current_user
+    # @user = current_user
     if current_user
       project = Project.new(project_params)
       project.screenshottmp = "http://api.screenshotmachine.com/?key=0ec8ed&size=M&format=PNG&url=#{project_params[:live_url]}"
@@ -51,7 +52,14 @@ class ProjectsController < ApplicationController
     project.screenshottmp = "http://api.screenshotmachine.com/?key=0ec8ed&size=E&format=PNG&url=#{project_params[:live_url]}"
     if current_user && current_user[:id] == project[:user_id]
       project.update_attributes(project_params)
-      redirect_to project_path(project)
+      if project.save
+         flash[:notice] = 'Project updated.'
+         redirect_to project_path(project)
+      else
+        flash[:error] = project.errors.full_messages.join(", ")
+        redirect_to edit_project_path
+    end
+     
     else
       redirect_to root_path
     end
