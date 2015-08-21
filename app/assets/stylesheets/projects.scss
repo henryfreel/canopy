@@ -165,7 +165,10 @@
 }
 
 .project-view-link {
+	white-space: nowrap;
 	font-size: 13px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .project-view-link > a {
@@ -174,7 +177,10 @@
 }
 
 .project-view-github {
+	white-space: nowrap;
 	font-size: 13px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .project-view-github > a {
