@@ -23,7 +23,7 @@
         <%= f.text_area :snippet, cols: "60", rows: "15", placeholder: "Add code snippets" , class: "form-control"%>
         </div>
         <div class="form-group">
-        <%= f.submit "Save project", class: "btn btn-primary btn-block input-button"%>
+        <%= f.button "Save project", class: "btn btn-primary btn-block input-button", data: {disable_with: "<i class= 'fa fa-spinner fa-spin'></i> Working on it..."} %>
         </div>
       <% end %>
 
