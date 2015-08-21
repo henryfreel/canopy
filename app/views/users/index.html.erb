@@ -5,7 +5,7 @@
 
       <h3>Developers</h3>
 
-      <div class="btn-group sort-by">
+      <!-- <div class="btn-group sort-by">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Most Recent &nbsp <span class="caret"></span>
         </button>
@@ -14,12 +14,13 @@
           <li><a href="#">Another action</a></li>
           <li><a href="#">Something else here</a></li>
         </ul>
-      </div>  
+      </div>  --> 
+      
     </div>
 
     <% @users.order(:projects.length).limit(20).each do |user| %>
 
-      <div class="col-md-6">
+      <div class="col-md-4">
 
         <div class="developer-container">
 
@@ -28,10 +29,25 @@
           </div>
 
           <div class="developer-info-container">
-            <a href="/canopy-<%= user.username %>"><%= user.full_name %></a>
-            <p><%= user.location %></p>
-            <p><%= user.stack %></p>
-            <p><%= user.projects.length %></p>
+
+            <a class="developer-info-name" href="/canopy-<%= user.username %>"><%= user.username %></a>
+
+            <% if user.job_title %>
+              <% if !user.job_title.empty? %>
+                <div class="developer-info-item developer-info-title"><span class="fa fa-fw fa-suitcase" aria-hidden="true"></span> <%= user.job_title %></div>
+              <% end %>
+            <% end %>
+            
+            <% if user.location %>
+              <% if !user.location.empty? %>
+                <div class="developer-info-item developer-info-location"><span class="fa fa-fw fa-map-marker" aria-hidden="true"></span> <%= user.location %></div>
+                <% end %>
+            <% end %>
+
+            <!-- <div class="developer-info-item developer-info-stack"><span class="fa fa-fw fa-file-code-o" aria-hidden="true"></span> <%= user.stack %></div> -->
+
+            <div class="developer-info-item developer-info-projects"><span class="fa fa-fw fa-leaf" aria-hidden="true"></span> <span class="developer-info-projects-count"><%= user.projects.length %></span><span class="developer-info-projects-text"> Projects</span></div>
+
             <br>
           </div>
 
