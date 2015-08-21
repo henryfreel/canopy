@@ -15,8 +15,8 @@ class Project < ActiveRecord::Base
     presence: true, 
     length: {maximum: 255},
     format: {
-      with: /https:/, 
-      message: "must start with https://"
+      with: /http/, 
+      message: "must start with http"
     }
 
   attr_accessor :screenshottmp
