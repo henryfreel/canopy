@@ -5,6 +5,8 @@ $(function() {
 		var $likeButton = $('.like-project').find('span')
 		console.log($likeButton)
 
+		console.log('clicked');
+
 		if ($likeButton.hasClass('heart-unselected')) {
 
 			liked = true;
