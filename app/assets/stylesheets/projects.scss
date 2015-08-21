@@ -65,10 +65,13 @@
 }
 
 .project-preview-title {
-	display: inline-block;
+	display: block;
 	font-size: 14px;
 	font-weight: 400;
 	color: $grey-dark;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .project-preview-heart {
