@@ -22,9 +22,11 @@
           </div>
 
           <% if @user.github %>
-            <div class="project-info-item">
-              <p class="profile-info-title"><span class="fa fa-github fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= @user.github %></strong></p>
-            </div>
+            <% if !@user.github.empty? %>
+              <div class="project-info-item">
+                <p class="profile-info-title"><span class="fa fa-github fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= @user.github %></strong></p>
+              </div>
+            <% end %>
           <% end %>
 
           <div class="project-info-item bio">
