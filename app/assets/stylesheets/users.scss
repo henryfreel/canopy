@@ -74,6 +74,7 @@
 	margin: auto;
 	margin-bottom: 15px;
 	box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+	background-color: $primary-color;
 	margin-top: -70px;
 }
 
@@ -97,7 +98,7 @@
 
 .profile-info-container {
 	border-top: 1px solid rgba(0,0,0,0.1);
-	padding: 15px;
+	padding: 15px 15px 0px 15px;
 	background-color: $grey-lightest;
 	border-radius: 0px 0px 4px 4px;
 }
@@ -108,14 +109,19 @@
 
 .profile-info-title {
 	color: $grey-dark;
-	display: inline-block;
+	display: block;
+	width: 100%;
 	// background-color: blue;
 	margin-bottom: 0;
+	// background-color: red;
+ 	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .profile-info-icon {
 	color: $grey;
-	margin-right: 2px;
+	margin-right: 7px;
 }
 
  .profile-info-title-text {
@@ -124,22 +130,39 @@
  	font-weight: 400;
  }
 
+a .profile-info-title-text {
+	color: $primary-color-dark;
+	// text-decoration-color: $primary-color;
+}
+
+.profile-info a:hover {
+	color: $primary-color;
+}
+
 .profile-info-data {
 	display: inline-block;
 	float: right;
 	margin-bottom: 0;
 }
 
-.project-info-item.bio {
-	padding: 5px 0px 0px 0px;
+.profile-info-title-stack {
+	white-space: normal;
+	// padding-left: 15px;
 }
 
-.profile-info-bio {
-	display: block;
-	margin-bottom: 0;
-	padding-bottom: 0;
-	padding-top: 0;
+.project-info-item.bio {
+	padding: 0px 0px 1px 0px;
+	font-size: 13px;
+	font-weight: 400;
+	color: $grey-medium;
 }
+
+// .profile-info-bio {
+// 	display: block;
+// 	margin-bottom: 10px;
+// 	padding-bottom: 0;
+// 	padding-top: 0;
+// }
 
 /* - - - - - - - - Developers Page - - - - - - - - */
 
