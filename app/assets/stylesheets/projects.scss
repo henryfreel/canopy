@@ -23,6 +23,7 @@
 .sort-by > button {
 	background-color: $white;
 	border: 1px solid $grey;
+	margin-top: -5px;
 }
 
 .project-preview-container {
@@ -84,7 +85,7 @@
 	margin-bottom: 0px;
 }
 
-.glyphicon-heart {
+.fa-heart {
 	color: $grey;
 }
 
@@ -116,3 +117,129 @@
 	position: relative;
 	top: -8px;
 }
+
+/* - - - - - - - - Projects Page - - - - - - - - */
+
+.project-view-container {
+	// background-color: $white;
+}
+
+.project-view-item {
+	display: block;
+	margin: 0px 0 8px 0;
+}
+
+.project-view-title {
+	// padding: 0px 0 10px 0;
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 15px;
+	line-height: 1.3;
+}
+
+.project-view-avatar {
+	height: 30px;
+	width: 30px;
+	background-position: center;
+	background-size: cover;
+	border-radius: 50%;
+	border: 2px solid $white;
+	box-shadow: $box-shadow;
+	display: inline-block;
+}
+
+.project-view-username {
+	padding: 0px 0 10px 0;
+	font-size: 14px;
+	font-weight: 400;
+	display: inline-block;
+	padding: 0px;
+	padding-left: 5px;
+	margin: 0px;
+	position: relative;
+	top: -9px;
+}
+
+.project-view-username > a {
+	color: $grey-dark;
+}
+
+.project-view-link {
+	font-size: 13px;
+}
+
+.project-view-link > a {
+	font-weight: 400;
+	color: $grey-dark;
+}
+
+.project-view-github {
+	font-size: 13px;
+}
+
+.project-view-github > a {
+	font-weight: 400;
+	color: $grey-dark;
+}
+
+.project-view-like {
+	display: inline-block;
+	font-size: 13px;
+	color: $grey-dark;
+	font-weight: 400;
+	display: inline-block;
+}
+
+.project-view-like-counter {
+	display: inline-block;
+	float: right;
+	font-size: 13px;
+	color: $grey;
+	font-weight: 400;
+}
+
+.project-view-bio {
+	margin-top: 15px;
+	font-size: 13px;
+	font-weight: 300;
+}
+
+.edit-project-button {
+	margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
