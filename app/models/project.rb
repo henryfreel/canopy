@@ -33,7 +33,7 @@ class Project < ActiveRecord::Base
             :storage => :s3,
             :s3_credentials => Proc.new { |a| a.instance.s3_credentials },
             :path => "screenshot/:id/:style/screenshot.:extension",
-            :default_url => "https://s3.amazonaws.com/project-canopy/defaults/default_screenshot.png"
+            :default_url => "https://s3.amazonaws.com/development-canopy/defaults/default_screenshot.png"
             
   validates_attachment :screenshot, 
               :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png", "image/jpg"]},
