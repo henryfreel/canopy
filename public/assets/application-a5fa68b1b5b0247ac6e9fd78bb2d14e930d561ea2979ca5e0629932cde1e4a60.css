@@ -1,0 +1,886 @@
+/* - - - - - - - - Colors - - - - - - - - */
+/* - - - - - - - - Fonts - - - - - - - - */
+/* - - - - - - - - Colors - - - - - - - - */
+/* - - - - - - - - Fonts - - - - - - - - */
+/* line 3, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/edit_project.scss */
+#new-project-form {
+  margin-top: 10px;
+  padding: 40px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  background-color: #FFFFFF;
+}
+
+/* line 11, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/edit_project.scss */
+#edit-project-form {
+  margin-top: 10px;
+  padding: 40px;
+  border: 1px solid #BBBBBB;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+
+/* line 19, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/edit_project.scss */
+.help-block {
+  font-size: 12px;
+  color: #BBBBBB;
+}
+/* - - - - - - - - Colors - - - - - - - - */
+/* - - - - - - - - Fonts - - - - - - - - */
+/* line 3, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  padding-top: 90px;
+  background-color: #EDEDED;
+}
+
+/* - - - - - - - - Main Nav - - - - - - - - */
+/* line 12, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+#navbar {
+  background-color: #282F28;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075);
+}
+
+/* line 18, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+#navbar-brand {
+  color: #FFFFFF;
+  font-size: 24px;
+  height: 60px;
+  padding-top: 12.5px;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: -1px;
+  margin-right: 10px;
+}
+
+/* line 28, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+#navbar-logo {
+  display: inline-block;
+  /*position: relative;*/
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(/assets/logo-green-c0152581a64ea8d0ccd23533be6394c9a7ded65d003c41b548de48e947d4a28a.svg);
+}
+
+/* line 39, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+#active-page {
+  font-weight: 400;
+  color: #EDEDED;
+}
+
+/* line 45, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+#navbar form {
+  padding-right: 10px;
+}
+
+/* line 49, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+#search-bar {
+  border-color: #383E34;
+  margin-top: 5px;
+  height: 32px;
+}
+
+/* line 55, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.form-control:focus {
+  border-color: rgba(118, 152, 66, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(118, 152, 66, 0.6);
+  outline: 0 none;
+}
+
+/* line 61, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+#navbar-name {
+  position: relative;
+  top: -7.5px;
+  display: inline-block;
+}
+
+/* line 67, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+#navbar-avatar {
+  height: 25px;
+  width: 25px;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-right: 8px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  top: -4px;
+}
+
+/* line 84, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+#navbar .navbar-nav .open > a {
+  color: #EDEDED;
+  background-color: #282F28;
+}
+
+/* line 89, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+#navbar-right {
+  float: right;
+}
+
+/* line 93, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+#navbar-username {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+}
+
+/* line 99, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar .btn {
+  margin-top: 13px;
+  margin-left: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* line 110, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.btn {
+  border-radius: 3px;
+  border: none;
+}
+
+/* line 115, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.btn-primary {
+  background-color: #769842;
+}
+
+/* line 119, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.btn-default {
+  background-color: #666666;
+}
+
+/* line 123, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar-nav > li {
+  height: 60px;
+}
+
+/* line 127, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar-nav > li > a {
+  padding-top: 21px;
+  padding-bottom: 19px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 134, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar-nav > li > a.navbar-action {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 139, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar-default {
+  border: none;
+  border-color: #282F28;
+}
+
+/* line 144, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar-default .navbar-nav > li > a {
+  font-size: 14px;
+  font-weight: 300;
+  color: #A7A7A7;
+}
+
+/* line 150, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar-default .navbar-nav > li > a:hover {
+  font-size: 14px;
+  color: #EDEDED;
+  background-color: #282F28;
+}
+
+/* line 156, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar-nav > li > a.btn {
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+/* line 161, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar-nav > li > a.btn.btn-primary:hover {
+  color: #FFFFFF;
+  background-color: #546E2D;
+}
+
+/* line 166, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar-nav > li > a.btn.btn-default:hover {
+  color: #eeeeee;
+  background-color: #383E34;
+}
+
+/* - - - - - - - - Dropdown Menu - - - - - - - - */
+/* line 173, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.dropdown-menu {
+  min-width: 140px;
+}
+
+/* line 177, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar ul.dropdown-menu {
+  background-color: #282F28;
+  border-color: #282F28;
+}
+
+/* line 182, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar ul.dropdown-menu li a {
+  font-weight: 300;
+  color: #BBBBBB;
+}
+
+/* line 187, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar ul.dropdown-menu li:hover {
+  background-color: #383E34;
+}
+
+/* line 191, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar ul.dropdown-menu li a:hover {
+  background-color: #282F28;
+  font-weight: 400;
+  color: #FAFAFA;
+}
+
+/* line 197, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.navbar ul.dropdown-menu li a:hover > span {
+  color: #FAFAFA;
+}
+
+/* line 199, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 6px 0;
+  overflow: hidden;
+  background-color: #383E34;
+}
+
+/* - - - - - - - - iFrame - - - - - - - - */
+/* line 208, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+iframe {
+  border: none;
+  background-color: #BBBBBB;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* line 214, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/global.scss */
+pre {
+  font-size: 13px;
+  display: block;
+  padding: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #303B28;
+  border: 1px solid #303B28;
+  border-radius: 3px;
+}
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #303B28;
+  color: #e6e1dc;
+  color: #f8f8f8;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs-comment,
+.hljs-shebang {
+  color: #bc9458;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.ruby .hljs-function .hljs-keyword,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title,
+.method,
+.hljs-list .hljs-title {
+  color: #c26230;
+}
+
+.hljs-string,
+.hljs-number,
+.hljs-regexp,
+.hljs-tag .hljs-value,
+.hljs-cdata,
+.hljs-filter .hljs-argument,
+.hljs-attr_selector,
+.apache .hljs-cbracket,
+.hljs-date,
+.tex .hljs-command,
+.asciidoc .hljs-link_label,
+.markdown .hljs-link_label {
+  color: #ADC6EF;
+}
+
+.hljs-subst {
+  color: #519f50;
+}
+
+.hljs-tag,
+.hljs-tag .hljs-keyword,
+.hljs-tag .hljs-title,
+.hljs-doctype,
+.hljs-sub .hljs-identifier,
+.hljs-pi,
+.input_number {
+  color: #e8bf6a;
+  color:#769842;
+}
+
+.hljs-identifier {
+  color: #d0d0ff;
+}
+
+.hljs-class .hljs-title,
+.hljs-type,
+.smalltalk .hljs-class,
+.hljs-doctag {
+  text-decoration: none;
+}
+
+.hljs-constant,
+.hljs-name {
+  color: #da4939;
+}
+
+
+.hljs-symbol,
+.hljs-built_in,
+.ruby .hljs-symbol .hljs-string,
+.ruby .hljs-symbol .hljs-identifier,
+.asciidoc .hljs-link_url,
+.markdown .hljs-link_url,
+.hljs-attribute {
+  color: #6d9cbe;
+}
+
+.asciidoc .hljs-link_url,
+.markdown .hljs-link_url {
+  text-decoration: underline;
+}
+
+
+
+.hljs-params,
+.hljs-variable,
+.clojure .hljs-attribute {
+  color: #d0d0ff;
+}
+
+.css .hljs-tag,
+.hljs-rule .hljs-property,
+.hljs-pseudo,
+.tex .hljs-special {
+  color: #cda869;
+}
+
+.css .hljs-class {
+  color: #9b703f;
+}
+
+.hljs-rule .hljs-keyword {
+  color: #c5af75;
+}
+
+.hljs-rule .hljs-value {
+  color: #cf6a4c;
+}
+
+.css .hljs-id {
+  color: #8b98ab;
+}
+
+.hljs-annotation,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in {
+  color: #9b859d;
+}
+
+.hljs-preprocessor,
+.hljs-preprocessor *,
+.hljs-pragma {
+  color: #8996a8 !important;
+}
+
+.hljs-hexcolor,
+.css .hljs-value .hljs-number {
+  color: #769842;
+}
+
+.hljs-title,
+.hljs-decorator,
+.css .hljs-function {
+  color: #ffc66d;
+}
+
+.diff .hljs-header,
+.hljs-chunk {
+  background-color: #2f33ab;
+  color: #e6e1dc;
+  display: inline-block;
+  width: 100%;
+}
+
+.diff .hljs-change {
+  background-color: #4a410d;
+  color: #f8f8f8;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-addition {
+  background-color: #144212;
+  color: #e6e1dc;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: #600;
+  color: #e6e1dc;
+  display: inline-block;
+  width: 100%;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+  opacity: 0.7;
+}
+/* - - - - - - - - Colors - - - - - - - - */
+/* - - - - - - - - Fonts - - - - - - - - */
+/* line 7, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.page-header {
+  border: none;
+  height: 32px;
+  margin-top: 0px;
+}
+
+/* line 14, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.page-header > h3 {
+  display: inline-block;
+  margin: 0;
+}
+
+/* line 19, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.sort-by {
+  float: right;
+}
+
+/* line 23, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.sort-by > button {
+  background-color: #FFFFFF;
+  border: 1px solid #BBBBBB;
+}
+
+/* line 28, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.project-preview-container {
+  padding-bottom: 30px;
+}
+
+/* line 32, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.project-preview-content {
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+
+/* line 40, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.project-preview-content a {
+  text-decoration: none;
+}
+
+/* line 44, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.project-preview-content a:hover {
+  color: #769842;
+  font-weight: 500;
+}
+
+/* line 49, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.project-preview-content:hover {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* line 53, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.project-preview-image {
+  height: 150px;
+  width: 100%;
+  background-size: cover;
+  background-position: center top;
+  margin-bottom: 10px;
+}
+
+/* line 61, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.project-preview-info {
+  width: 100%;
+}
+
+/* line 67, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.project-preview-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #383E34;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 77, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.project-preview-heart {
+  font-size: 12px;
+  font-weight: 400;
+  color: #383E34;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+/* line 87, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.glyphicon-heart {
+  color: #BBBBBB;
+}
+
+/* line 91, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.heart-selected {
+  color: #769842;
+}
+
+/* line 95, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.project-preview-user {
+  margin-top: 10px;
+  height: 25px;
+}
+
+/* line 100, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.project-preview-avatar {
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 1px solid #EDEDED;
+}
+
+/* line 110, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/projects.scss */
+.project-preview-username {
+  color: #383E34;
+  font-weight: 400;
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 5px;
+  position: relative;
+  top: -8px;
+}
+/* - - - - - - - - Colors - - - - - - - - */
+/* - - - - - - - - Fonts - - - - - - - - */
+/* line 7, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/sessions.scss */
+.login-page {
+  background-color: #EDEDED;
+}
+
+/* - - - - - - - - Login Form - - - - - - - - */
+/* line 13, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/sessions.scss */
+#login-form {
+  margin-top: 80px;
+  padding: 40px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+
+/* line 21, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/sessions.scss */
+.input-button {
+  text-transform: uppercase;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 28, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/sessions.scss */
+.input-button:hover {
+  background-color: #546E2D;
+}
+
+/* line 32, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/sessions.scss */
+.form-control {
+  height: 42px;
+}
+
+/* line 36, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/sessions.scss */
+#login-logo {
+  margin: auto;
+  height: 70px;
+  width: 70px;
+  margin-bottom: 40px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(/assets/logo-grey-2-b0c30f406465030ecdac25b79d8429a02b8f7e06b4281d0f016156ac2c980381.svg);
+}
+/* - - - - - - - - Colors - - - - - - - - */
+/* - - - - - - - - Fonts - - - - - - - - */
+/* - - - - - - - - Sign Up Page - - - - - - - - */
+/* line 9, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.signup-page {
+  background-color: #EDEDED;
+  padding-top: 30px;
+}
+
+/* line 14, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+#signup-form {
+  margin-top: 10px;
+  padding: 40px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+
+/* line 22, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+#edit-user-form {
+  margin-top: 10px;
+  padding: 40px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+
+/* line 30, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.form-control {
+  height: 42px;
+}
+
+/* line 34, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.input-button {
+  text-transform: uppercase;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 41, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.input-button:hover {
+  background-color: #546E2D;
+}
+
+/* line 45, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+#edit-user-form .input-button:active {
+  background-color: #546E2D;
+}
+
+/* line 49, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+#multipart {
+  background-color: red;
+}
+
+/* - - - - - - - - Profile Page - - - - - - - - */
+/* line 56, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.profile-info {
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  padding: 0px;
+  margin-top: 50px;
+  padding-top: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* line 67, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.profile-avatar {
+  height: 145px;
+  width: 145px;
+  background-size: cover;
+  background-position: center;
+  border: 5px solid #FFFFFF;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 15px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  background-color: #769842;
+  margin-top: -70px;
+}
+
+/* line 81, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.profile-name {
+  font-size: 21px;
+  font-weight: 500;
+  color: #383E34;
+  margin-top: 0;
+  margin-bottom: 2px;
+  padding: 0;
+}
+
+/* line 90, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.profile-location {
+  font-size: 12px;
+  font-weight: 300;
+  color: #BBBBBB;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+/* line 99, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.profile-info-container {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 15px 5px 15px;
+  background-color: #FAFAFA;
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* line 106, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.project-info-item {
+  padding: 0px 0px 10px 0px;
+}
+
+/* line 110, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.profile-info-title {
+  color: #383E34;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 122, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.profile-info-icon {
+  color: #BBBBBB;
+  margin-right: 7px;
+}
+
+/* line 127, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.profile-info-title-text {
+  color: #666666;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* line 133, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+a .profile-info-title-text {
+  color: #546E2D;
+}
+
+/* line 138, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.profile-info a:hover {
+  color: #769842;
+}
+
+/* line 142, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.profile-info-data {
+  display: inline-block;
+  float: right;
+  margin-bottom: 0;
+}
+
+/* line 148, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.profile-info-title-stack {
+  white-space: normal;
+}
+
+/* line 153, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.project-info-item.bio {
+  padding: 0px 0px 1px 0px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #666666;
+}
+
+/* - - - - - - - - Developers Page - - - - - - - - */
+/* line 169, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.developer-container {
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+/* line 177, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.developer-avatar-container {
+  display: inline-block;
+}
+
+/* line 182, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.developer-avatar {
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 5px solid #FFFFFF;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* line 192, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+.developer-info-container {
+  padding-left: 10px;
+  display: inline-block;
+  width: 60%;
+}
+
+/* line 199, /Users/anniepeng/Desktop/dev/canopy/app/assets/stylesheets/users.scss */
+#no-projects {
+  color: #769842;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
