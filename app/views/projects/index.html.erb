@@ -25,9 +25,9 @@
               <a class="project-preview-title" href="/projects/<%= project.id %>"><%= project.title %></a>
               <div class="project-preview-heart">
                 <% if current_user && current_user.liked_projects.include?(project) %>
-                  <span class="glyphicon glyphicon-heart selected" aria-hidden="true"></span><span class="like-project-text"></span>
+                  <span class="fa fa-heart heart-selected" aria-hidden="true"></span><span class="like-project-text"></span>
                 <% else %>
-                  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span><span class="like-project-text"></span>
+                  <span class="fa fa-heart heart-unselected" aria-hidden="true"></span><span class="like-project-text"></span>
                 <% end %>
                 <% if project.users.length > 1 %>
                   <%= project.users.length %> Likes
