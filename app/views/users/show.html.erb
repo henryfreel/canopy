@@ -13,25 +13,67 @@
         <p class="profile-location text-center"><%= !@user.location || !@user.location.empty? ? @user.location : 'No Location Listed' %></p>
 
         <div class="profile-info-container">
-          <div class="project-info-item">
-            <p class="profile-info-title"><span class="fa fa-envelope fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= !@user.email || !@user.email.empty?  ? @user.email : 'No Email Listed' %></strong></p>
-          </div>
 
-          <div class="project-info-item">
-            <p class="profile-info-title"><span class="fa fa-calendar fa-fw profile-info-icon"></span> <strong class="profile-info-title-text">Member Since <%= @user.created_at.strftime("%b %Y") || 'User Was Not Created' %></strong></p>
-          </div>
-
-          <% if @user.github %>
-            <% if !@user.github.empty? %>
+          <% if @user.username %>
+            <% if !@user.username.empty? %>
               <div class="project-info-item">
-                <p class="profile-info-title"><span class="fa fa-github fa-fw profile-info-icon"></span> <strong class="profile-info-title-text"><%= @user.github %></strong></p>
+                <p class="profile-info-title"><span class="fa fa-user fa-fw profile-info-icon"></span><strong class="profile-info-title-text"><%= @user.username %></strong></p>
               </div>
             <% end %>
           <% end %>
 
-          <div class="project-info-item bio">
-            <p class="profile-info-bio"><%= @user.bio %></p>
+          <% if @user.job_title %>
+            <% if !@user.job_title.empty? %>
+              <div class="project-info-item">
+                <p class="profile-info-title"><span class="fa fa-suitcase fa-fw profile-info-icon"></span><strong class="profile-info-title-text"><%= @user.job_title %></strong></p>
+              </div>
+            <% end %>
+          <% end %>
+
+          <% if @user.github %>
+            <% if !@user.github.empty? %>
+              <div class="project-info-item">
+                <a href="<%= @user.github %>" target="blank" class="profile-info-title"><span class="fa fa-github fa-fw profile-info-icon"></span><strong class="profile-info-title-text">Github</strong></a>
+              </div>
+            <% end %>
+          <% end %>
+
+          <% if @user.linkedin %>
+            <% if !@user.linkedin.empty? %>
+              <div class="project-info-item">
+                <a href="<%= @user.linkedin %>" target="blank" class="profile-info-title"><span class="fa fa-linkedin-square fa-fw profile-info-icon"></span><strong class="profile-info-title-text">LinkedIn</strong></a>
+              </div>
+            <% end %>
+          <% end %>
+
+          <% if @user.stack %>
+            <% if !@user.stack.empty? %>
+              <div class="project-info-item">
+                <p class="profile-info-title"><span class="fa fa-file-code-o fa-fw profile-info-icon"></span><strong class="profile-info-title-text profile-info-title-stack"><%= @user.stack %></strong></p>
+              </div>
+            <% end %>
+          <% end %>
+
+          <% if @user.email %>
+            <% if !@user.email.empty? %>
+              <div class="project-info-item">
+                <p class="profile-info-title"><span class="fa fa-envelope fa-fw profile-info-icon"></span><strong class="profile-info-title-text"><%= @user.email %></strong></p>
+              </div>
+            <% end %>
+          <% end %>
+
+          <div class="project-info-item">
+            <p class="profile-info-title"><span class="fa fa-calendar fa-fw profile-info-icon"></span><strong class="profile-info-title-text">Member Since <%= @user.created_at.strftime("%b %Y") || 'User Was Not Created' %></strong></p>
           </div>
+
+          <% if @user.bio %>
+            <% if !@user.bio.empty? %>
+              <div class="project-info-item bio">
+                <p class="profile-info-bio"><%= @user.bio %></p>
+              </div>
+            <% end %>
+          <% end %>
+
         </div>
 
       </div>
