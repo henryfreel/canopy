@@ -7,10 +7,24 @@ $(function() {
 
 		if ($likeButton.hasClass('heart-unselected')) {
 
-			$('.like-project-text').text('Unlike')
 			liked = true;
 			var $heart = $(this).find('.glyphicon');
 			$heart.addClass('heart-selected').removeClass('heart-unselected');
+
+			$('.like-project-text').text("Unlike");
+
+			var likeCount = $('#like-counter').text();
+			likeCount = Number(likeCount);
+			likeCount += 1;
+
+			if (likeCount > 1) {
+				$('#like-counter-text').text('Likes');
+			} else {
+				$('#like-counter-text').text('Like');
+			}
+
+			likeCount = likeCount.toString();
+			$('#like-counter').text(likeCount);
 
 			$.post('/likes', {
 				like: { project_id: $(this).attr('data-id') }
@@ -25,6 +39,19 @@ $(function() {
 			liked = false;
 			var $heart = $(this).find('.glyphicon');
 			$heart.addClass('heart-unselected').removeClass('heart-selected');
+
+			var likeCount = $('#like-counter').text();
+			likeCount = Number(likeCount);
+			likeCount -= 1;
+
+			if (likeCount < 1) {
+				$('#like-counter-text').text('Likes');
+			} else {
+				$('#like-counter-text').text('Like');
+			}
+
+			likeCount = likeCount.toString();
+			$('#like-counter').text(likeCount);
 
 			$.ajax({
 			  type: 'DELETE',
