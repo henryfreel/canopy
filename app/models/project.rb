@@ -15,11 +15,9 @@ class Project < ActiveRecord::Base
     presence: true, 
     length: {maximum: 255},
     format: {
-      with: /https:/, 
-      message: "must start with https://"
+      with: /http/, 
+      message: "must start with http"
     }
-  validates :snippet, 
-    length: {maximum: 500}
 
   attr_accessor :screenshottmp
 
@@ -32,7 +30,7 @@ class Project < ActiveRecord::Base
             
   validates_attachment :screenshot, 
               :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png", "image/jpg"]},
-              :size => { :in => 0..100.kilobytes}
+              :size => { :in => 0..10000.kilobytes}
 
 
   def screenshot_from_url

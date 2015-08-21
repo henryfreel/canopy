@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @users_page = true
     @users = User.all
     render :index
   end
