@@ -39,4 +39,17 @@ $(function() {
 
 	});
 
-});
+	$('#most-popular').on('click', function() {
+		$('#projects-by-recent').css('display', 'none');
+		$('#projects-by-likes').css('display', 'block');
+		$('#sort-by-text').text('Most Popular');
+	});
+
+	$('#most-recent').on('click', function() {
+		$('#projects-by-recent').css('display', 'block');
+		$('#projects-by-likes').css('display', 'none');
+		$('#sort-by-text').text('Most Recent');
+	});
+
+
+}); //end of function
