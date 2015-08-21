@@ -5,7 +5,7 @@
 		</div>
 		<div class="col-md-8 col-md-offset-2" id="signup-form">
 			<%= form_for @user, :html => { :multipart => true } do |f| %>
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<div class="form-group">
 						<%= f.text_field :first_name, placeholder: "First name", autofocus: true, class: "form-control" %>
 					</div>
@@ -29,12 +29,6 @@
 					</div>
 					<p class="text-center">Already have an account? <%= link_to "Click here", login_path %> to log in.</p>
 				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<%= f.submit "Sign Up With Github", class: "btn btn-default btn-block input-button" %>
-					</div>
-				</div>
-			  
 			<% end %>
 		</div>
 	</div>
