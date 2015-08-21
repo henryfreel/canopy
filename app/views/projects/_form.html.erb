@@ -1,17 +1,40 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2" id="new-project-form">
-      <%= form_for @project, :html => { :id => "project-form"} do |f| %>
-        <%= f.text_field :title, placeholder: "Project title", autofocus: true, :required => true, class: "form-control" %><br>
-        <%= f.url_field :live_url, placeholder: "Link to live project (https://example.com)", id: "live_url", :required => true, class: "form-control" %><br>
-        <%= f.url_field :github_url, placeholder: "Link to Github repo  (https://github.com/example)" , class: "form-control"%><br>
-        <%= f.text_area :description, cols: "60", rows: "3", placeholder: "Describe your project", :required => true, class: "form-control" %><br>
-        <%= f.text_area :snippet, cols: "60", rows: "15", placeholder: "Add code snippets" , class: "form-control"%><br>
-        <%= f.submit "Save project", class: "btn btn-primary btn-block input-button"%><br>
+       
+        <%= form_for @project, :html => { :id => "project-form"} do |f| %>
+        <div class="form-group">
+        <%= f.text_field :title, placeholder: "Project title", autofocus: true, :required => true, class: "form-control" %> 
+        </div>
 
+        <div class="form-group">
+        <%= f.url_field :live_url, placeholder: "Link to live project (https://example.com)", id: "live_url", :required => true, class: "form-control" %>
+        <span class="help-block"> Please make sure</span>
+        </div>
+
+        <div class="form-group">
+        <%= f.url_field :github_url, placeholder: "Link to Github repo  (https://github.com/example)" , class: "form-control"%>
+        </div>
+
+        <div class="form-group">
+        <%= f.text_area :description, cols: "60", rows: "3", placeholder: "Describe your project", :required => true, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+        <%= f.text_area :snippet, cols: "60", rows: "15", placeholder: "Add code snippets" , class: "form-control"%>
+        </div>
+        <div class="form-group">
+        <%= f.submit "Save project", class: "btn btn-primary btn-block input-button"%>
+        </div>
       <% end %>
 
       <p id="notice">
     </div>
   </div>
 </div>
+
+<!-- 
+<label class="sr-only" for="inputHelpBlock">Input with help text</label>
+<input type="text" id="inputHelpBlock" class="form-control" aria-describedby="helpBlock">
+...
+<span id="helpBlock" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span> -->
