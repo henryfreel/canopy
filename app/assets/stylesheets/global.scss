@@ -116,6 +116,10 @@ body {
 	background-color: $primary-color;
 }
 
+.input-button, .btn-primary.active, .btn-primary:active {
+    background-color: $primary-color-dark;
+}
+
 .btn-default {
 	background-color: $grey-medium;
 }
@@ -166,6 +170,10 @@ body {
 .navbar-nav > li > a.btn.btn-default:hover {
 	color: #eeeeee;
 	background-color: $grey-dark;
+}
+
+#form-submit-button.active, .form-submit-button:active {
+	background-color: $primary-color-dark;
 }
 
 /* - - - - - - - - Dropdown Menu - - - - - - - - */
