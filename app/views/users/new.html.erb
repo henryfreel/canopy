@@ -25,7 +25,7 @@
 						 <span class="help-block"> Password must be at least 6 characters long</span>
 					</div>
 					<div class="form-group">
-						<%= f.submit "Sign Up", class: "btn btn-primary btn-block input-button" %>
+						<%= f.button "Sign Up", class: "btn btn-primary btn-block input-button", data: {disable_with: "<i class= 'fa fa-spinner fa-spin'></i> Working on it..."} %>
 					</div>
 					<p class="text-center">Already have an account? <%= link_to "Click here", login_path %> to log in.</p>
 			<% end %>
