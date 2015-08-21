@@ -17,7 +17,7 @@
       </div>  
     </div>
 
-    <% @users.order(:first_name).limit(20).each do |user| %>
+    <% @users.order(:projects.length).limit(20).each do |user| %>
 
       <div class="col-md-6">
 
@@ -31,6 +31,7 @@
             <a href="/canopy-<%= user.username %>"><%= user.full_name %></a>
             <p><%= user.location %></p>
             <p><%= user.stack %></p>
+            <p><%= user.projects.length %></p>
             <br>
           </div>
 
