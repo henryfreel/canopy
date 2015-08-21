@@ -165,7 +165,10 @@
 }
 
 .project-view-link {
+	white-space: nowrap;
 	font-size: 13px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .project-view-link > a {
@@ -174,7 +177,10 @@
 }
 
 .project-view-github {
+	white-space: nowrap;
 	font-size: 13px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .project-view-github > a {
@@ -206,6 +212,18 @@
 
 .edit-project-button {
 	margin-top: 15px;
+}
+
+.btn-secondary.delete-project-button {
+	margin-top: 15px;
+	color: $grey-lightest;
+	background-color: #A74848;
+}
+
+.btn-secondary.delete-project-button:hover {
+	margin-top: 15px;
+	color: $grey-lightest;
+	background-color: #7E2E2E;
 }
 
 
