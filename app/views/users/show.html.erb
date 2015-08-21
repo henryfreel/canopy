@@ -79,7 +79,7 @@
       </div>
 
       <% if current_user && current_user[:id] == @user.id %>
-        <%= link_to "Edit Profile", edit_user_path(@user.username), class: "btn btn-default" %><br>
+        <%= link_to "Edit Profile", edit_user_path(@user.username), class: "btn btn-default btn-secondary" %><br>
       <% end %>
 
     </div>

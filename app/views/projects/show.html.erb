@@ -1,50 +1,76 @@
 <div class="container">
   <div class="row">
+
     <div class="col-sm-9">
-      <div class="row"> <!-- start of iframe row -->
+
+      <div class="row">
         <div class="col-md-12">
-          <iframe src="<%= @project.live_url %>" height="445" width="100%"></iframe> <br><br><br>
+          <iframe src="<%= @project.live_url %>" height="445" width="100%"></iframe> <br><br>
         </div>
-      </div> <!-- end of iframe row-->
-      <div class="row"> <!-- start of snippet row -->
+      </div>
+
+      <div class="row">
         <div class="col-md-12">
         <pre><code><%= @project.snippet %><br></code></pre>
         </div>
-      </div> <!-- end of snippet row -->
+      </div> 
+
     </div>
 
-    <div class="col-sm-3"> <!-- beginning of details -->
-      <!-- <div class="well"> -->
-        <h2><%= @project.title %></h2>
-        <p><strong>Project by:</strong> <a href="/canopy-<%= @project.user.username %>"><%= @project.user.full_name %></a></p>
-        <p><a href="<%= @project.live_url %>" target="_blank"><%= @project.live_url %></a></p>
-        <p><a href="<%= @project.github_url %>" target="_blank"><%= @project.github_url %></a></p>
+    <div class="project-view-container col-sm-3">
 
-        <% if @project.users.length > 1 %>
-          <p><span id="like-counter"><%= @project.users.length %></span> <span id="like-counter-text">Likes</span></p>
-        <% elsif @project.users.length < 1 %>
-          <p><span id="like-counter"><%= @project.users.length %></span> <span id="like-counter-text">Likes</span></p>
-        <% else %>
-          <p><span id="like-counter"><%= @project.users.length %></span> <span id="like-counter-text">Like</span></p>
+        <div class="project-view-item">
+          <div class="project-view-title"><%= @project.title %></div>
+        </div>
+
+        <div class="project-view-item">
+          <div class="project-view-avatar" style="background-image: url(<%= @project.user.avatar %>);"></div>
+          <div class="project-view-username"><a href="/canopy-<%= @project.user.username %>"><%= @project.user.username %></a></div>
+        </div>
+
+        <div class="project-view-item">  
+          <div class="project-view-link"><span class="fa fa-globe fa-fw profile-info-icon"></span><a href="<%= @project.live_url %>" target="_blank"><%= @project.live_url %></a></div>
+        </div>
+
+        <div class="project-view-item">
+          <div class="project-view-github"><span class="fa fa-github fa-fw profile-info-icon"></span><a href="<%= @project.github_url %>" target="_blank"><%= @project.github_url %></a></div class="project-view-github">
+        </div>
+
+        <div class="project-view-item">
+
+          <% if current_user %>
+            <a  class="project-view-like" href="javascript:void(0)" class="like-project" data-id="<%= @project.id %>">
+              <% if current_user.liked_projects.include? @project %>
+                <span class="fa fa-heart fa-fw heart-selected profile-info-icon" aria-hidden="true"></span><span class="like-project-text">Unlike</span>
+              <% else %>
+                <span class="fa fa-heart fa-fw heart-unselected profile-info-icon" aria-hidden="true"></span><span class="like-project-text">Like</span>
+              <% end %>
+            </a>
+          <% end %>
+
+          <% if @project.users.length > 1 %>
+            <div class="project-view-like-counter"><span id="like-counter"><%= @project.users.length %></span> <span id="like-counter-text">Likes</span></div>
+          <% elsif @project.users.length < 1 %>
+            <div class="project-view-like-counter"><span id="like-counter"><%= @project.users.length %></span> <span id="like-counter-text">Likes</span></div>
+          <% else %>
+            <div class="project-view-like-counter"><span id="like-counter"><%= @project.users.length %></span> <span id="like-counter-text">Like</span></div>
+          <% end %>
+
+        </div>
+
+        <% if @project.description %>
+          <% if !@project.description.empty? %>
+            <div class="project-view-item">
+              <div class="project-view-bio"><%= @project.description %></div>
+            </div>
+          <% end %>
         <% end %>
 
-        <% if current_user %>
-          <a href="javascript:void(0)" class="like-project" data-id="<%= @project.id %>">
-            <% if current_user.liked_projects.include? @project %>
-              <span class="glyphicon glyphicon-heart heart-selected" aria-hidden="true"></span> <span class="like-project-text">Unlike</span>
-            <% else %>
-              <span class="glyphicon glyphicon-heart heart-unselected" aria-hidden="true"></span> <span class="like-project-text">Like</span>
-            <% end %>
-          </a>
-        <% end %>
-
-        <p><strong>About this project:</strong> <%= @project.description %></p>
         <% if current_user && current_user.projects.include?(@project) %>
-          <%= link_to "Edit project", edit_project_path(@project) %>&nbsp &nbsp
-          <%= link_to "Delete project", @project, method: :delete, data: { confirm: 'Do you want to delete this project?'} %>
+          <%= link_to "Edit project", edit_project_path(@project), class: "btn btn-default btn-secondary edit-project-button" %>
         <% end %>
-      <!-- </div> -->
-    </div> <!-- end of details -->
+
+    </div>
 
   </div> <!-- end of main row -->
 </div> <!-- end of container -->
