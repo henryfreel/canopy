@@ -38,3 +38,13 @@ ERM
 WIREFRAMES
 ![Alt text](/app/assets/images/Wireframe1.jpg "Wireframe - Project Page")
 ![Alt text](/app/assets/images/Wireframe2.jpg "Wireframe - Project Flow")
+
+**What We'd Do With More Time**
+Comments
+Show the projects that you like on your profile page
+Ability to change password, with validation/confirmation
+Sort Projects on the home page by 'most popular' and other attributes
+OAuth with Github
+Add tiles gem so projects boxes on index page can be different sizes
+Tags for people's skillsets and stack
+Ability to "follow" other users
