@@ -8,7 +8,7 @@ $(function() {
 		if ($likeButton.hasClass('heart-unselected')) {
 
 			liked = true;
-			var $heart = $(this).find('.glyphicon');
+			var $heart = $(this).find('.fa');
 			$heart.addClass('heart-selected').removeClass('heart-unselected');
 
 			$('.like-project-text').text("Unlike");
@@ -37,7 +37,7 @@ $(function() {
 
 			$('.like-project-text').text('Like')
 			liked = false;
-			var $heart = $(this).find('.glyphicon');
+			var $heart = $(this).find('.fa');
 			$heart.addClass('heart-unselected').removeClass('heart-selected');
 
 			var likeCount = $('#like-counter').text();
