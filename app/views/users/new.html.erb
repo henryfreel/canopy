@@ -3,9 +3,8 @@
 		<div class="text-center">
 			<h1>Let's do this!</h1>
 		</div>
-		<div class="col-md-8 col-md-offset-2" id="signup-form">
+		<div class="col-md-6 col-md-offset-3" id="signup-form">
 			<%= form_for @user, :html => { :multipart => true } do |f| %>
-				<div class="col-md-12">
 					<div class="form-group">
 						<%= f.text_field :first_name, placeholder: "First name", autofocus: true, class: "form-control" %>
 					</div>
@@ -16,7 +15,7 @@
 						<%= f.text_field :username, placeholder: "Choose a username", required: true, class: "form-control" %>			
 					</div>
 					<div class="form-group">
-						<%= f.text_field :location, placeholder: "Location (San Francisco, CA)", class: "form-control" %><br>
+						<%= f.text_field :location, placeholder: "Location (San Francisco, CA)", class: "form-control" %>
 					</div>
 					<div class="form-group">
 						<%= f.email_field :email, placeholder: "Email", required: true, class: "form-control" %>
@@ -28,7 +27,6 @@
 						<%= f.submit "Sign Up", class: "btn btn-primary btn-block input-button" %>
 					</div>
 					<p class="text-center">Already have an account? <%= link_to "Click here", login_path %> to log in.</p>
-				</div>
 			<% end %>
 		</div>
 	</div>
