@@ -16,7 +16,7 @@
         <%= f.text_field :job_title, placeholder: "Job Title", class: "form-control" %><br>
         <%= f.text_field :stack, placeholder: "List your skills and specialties", class: "form-control" %><br>
         <%= f.file_field :avatar %><br>
-        <%= f.submit "Save Changes", class: "btn btn-primary btn-block input-button"%><br>
+        <%= f.button "Save Changes", class: "btn btn-primary btn-block input-button", data: {disable_with: "<i class= 'fa fa-spinner fa-spin'></i> Working on it..."}%><br>
       <% end %>
     </div>
   </div>
