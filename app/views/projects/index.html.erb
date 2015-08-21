@@ -7,47 +7,75 @@
 
   		<div class="btn-group sort-by">
   		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  		    Most Recent &nbsp <span class="caret"></span>
+  		    <span id="sort-by-text">Most Recent</span>&nbsp <span class="caret"></span>
   		  </button>
   		  <ul class="dropdown-menu pull-right">
-  		    <li><a href="#">Action</a></li>
-  		    <li><a href="#">Another action</a></li>
-  		    <li><a href="#">Something else here</a></li>
+  		    <li><a href="#" id="most-recent">Most Recent</a></li>
+  		    <li><a href="#" id="most-popular">Most Popular</a></li>
   		  </ul>
   		</div>	
   	</div>
   	
+  <div id="projects-by-recent" style="display:block">
   	<% @projects.limit(20).reverse_each do |project| %>
-	    <div class="col-xs-3 project-preview-container">
-	    	<div class="project-preview-content">
-
-	    		<a href="/projects/<%= project.id %>"><div class="project-preview-image" style="background-image: url(<%= project.screenshot.url %>);"></div></a>
-	    		<div class="project-preview-info">
-	    			<a class="project-preview-title" href="/projects/<%= project.id %>"><%= project.title %></a>
-	    			<div class="project-preview-heart">
-		    			<% if current_user && current_user.liked_projects.include?(project) %>
-		    			  <span class="glyphicon glyphicon-heart selected" aria-hidden="true"></span><span class="like-project-text"></span>
-		    			<% else %>
-		    			  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span><span class="like-project-text"></span>
-		    			<% end %>
-		    			<% if project.users.length > 1 %>
-		    			  <%= project.users.length %> Likes
-		    			<% elsif project.users.length < 1 %>
-		    			  <%= project.users.length %> Likes
-		    			<% else %>
-		    			  <%= project.users.length %> Like
-		    			<% end %>
-	    			</div>
-
-					<div class="project-preview-user">
-	    				<div class="project-preview-avatar" style="background-image: url(<%= project.user.avatar %>);"></div>
-	    				<a href="/canopy-<%= project.user.username %>"><div class="project-preview-username"><%= project.user.username %></div></a>
-	    			</div>
-	    		</div>
-
-	    	</div>
-	    </div>
+      <div class="col-xs-3 project-preview-container">
+        <div class="project-preview-content">
+          <a href="/projects/<%= project.id %>"><div class="project-preview-image" style="background-image: url(<%= project.screenshot.url %>);"></div></a>
+          <div class="project-preview-info">
+            <a class="project-preview-title" href="/projects/<%= project.id %>"><%= project.title %></a>
+            <div class="project-preview-heart">
+              <% if current_user && current_user.liked_projects.include?(project) %>
+                <span class="glyphicon glyphicon-heart selected" aria-hidden="true"></span><span class="like-project-text"></span>
+              <% else %>
+                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span><span class="like-project-text"></span>
+              <% end %>
+              <% if project.users.length > 1 %>
+                <%= project.users.length %> Likes
+              <% elsif project.users.length < 1 %>
+                <%= project.users.length %> Likes
+              <% else %>
+                <%= project.users.length %> Like
+              <% end %>
+            </div>
+          <div class="project-preview-user">
+              <div class="project-preview-avatar" style="background-image: url(<%= project.user.avatar %>);"></div>
+              <a href="/canopy-<%= project.user.username %>"><div class="project-preview-username"><%= project.user.username %></div></a>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
+  </div>
 
+  <div id="projects-by-likes" style="display:none">
+    <% @projects.order(:users.length).limit(20).each do |project| %>
+    <div class="col-xs-3 project-preview-container">
+      <div class="project-preview-content">
+        <a href="/projects/<%= project.id %>"><div class="project-preview-image" style="background-image: url(<%= project.screenshot.url %>);"></div></a>
+        <div class="project-preview-info">
+          <a class="project-preview-title" href="/projects/<%= project.id %>"><%= project.title %></a>
+          <div class="project-preview-heart">
+            <% if current_user && current_user.liked_projects.include?(project) %>
+              <span class="glyphicon glyphicon-heart selected" aria-hidden="true"></span><span class="like-project-text"></span>
+            <% else %>
+              <span class="glyphicon glyphicon-heart" aria-hidden="true"></span><span class="like-project-text"></span>
+            <% end %>
+            <% if project.users.length > 1 %>
+              <%= project.users.length %> Likes
+            <% elsif project.users.length < 1 %>
+              <%= project.users.length %> Likes
+            <% else %>
+              <%= project.users.length %> Like
+            <% end %>
+          </div>
+        <div class="project-preview-user">
+            <div class="project-preview-avatar" style="background-image: url(<%= project.user.avatar %>);"></div>
+            <a href="/canopy-<%= project.user.username %>"><div class="project-preview-username"><%= project.user.username %></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
   </div>
 </div>
