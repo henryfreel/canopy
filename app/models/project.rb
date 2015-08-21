@@ -11,9 +11,16 @@ class Project < ActiveRecord::Base
   	length: {maximum: 255}
   validates :description,
   	presence: true
-  validates :live_url, :github_url, 
-    presence: true, 
+  validates :live_url,
     length: {maximum: 255},
+    format: {
+      with: /http/, 
+      message: "must start with http"
+    } 
+  validates :github_url,  
+    length: {maximum: 255},
+    allow_nil: true, 
+    allow_blank: true,
     format: {
       with: /http/, 
       message: "must start with http"
