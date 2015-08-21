@@ -21,22 +21,23 @@
         <p><a href="<%= @project.github_url %>" target="_blank"><%= @project.github_url %></a></p>
 
         <% if @project.users.length > 1 %>
-          <p><%= @project.users.length %> Likes</p>
+          <p><span id="like-counter"><%= @project.users.length %></span> <span id="like-counter-text">Likes</span></p>
         <% elsif @project.users.length < 1 %>
-          <p><%= @project.users.length %> Likes</p>
+          <p><span id="like-counter"><%= @project.users.length %></span> <span id="like-counter-text">Likes</span></p>
         <% else %>
-          <p><%= @project.users.length %> Like</p>
+          <p><span id="like-counter"><%= @project.users.length %></span> <span id="like-counter-text">Like</span></p>
         <% end %>
 
         <% if current_user %>
           <a href="javascript:void(0)" class="like-project" data-id="<%= @project.id %>">
             <% if current_user.liked_projects.include? @project %>
-              <span class="glyphicon glyphicon-heart selected" aria-hidden="true"></span> <span class="like-project-text">Unlike</span>
+              <span class="glyphicon glyphicon-heart heart-selected" aria-hidden="true"></span> <span class="like-project-text">Unlike</span>
             <% else %>
-              <span class="glyphicon glyphicon-heart unselected" aria-hidden="true"></span> <span class="like-project-text">Like</span>
+              <span class="glyphicon glyphicon-heart heart-unselected" aria-hidden="true"></span> <span class="like-project-text">Like</span>
             <% end %>
-          </a><br>
+          </a>
         <% end %>
+
         <p><strong>About this project:</strong> <%= @project.description %></p>
         <% if current_user && current_user.projects.include?(@project) %>
           <%= link_to "Edit project", edit_project_path(@project) %>&nbsp &nbsp
