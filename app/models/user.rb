@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   					:storage => :s3,
   					:s3_credentials => Proc.new { |a| a.instance.s3_credentials },
   					:path => "avatar/:id/:style/avatar.:extension",
-  					:default_url => "https://s3.amazonaws.com/development-canopy/defaults/default_avatar.png"
+  					:default_url => "https://s3.amazonaws.com/project-canopy/defaults/default_avatar.png"
             
   validates_attachment :avatar, 
   						:content_type => { :content_type => ["image/jpeg", "image/gif", "image/png", "image/jpg"]},
