@@ -22,6 +22,7 @@
 					</div>
 					<div class="form-group">
 						<%= f.password_field :password, placeholder: "Password", required: true, class: "form-control" %>
+						 <span class="help-block"> Password must be at least 6 characters long</span>
 					</div>
 					<div class="form-group">
 						<%= f.submit "Sign Up", class: "btn btn-primary btn-block input-button" %>
