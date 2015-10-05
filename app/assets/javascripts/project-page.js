@@ -5,6 +5,8 @@ $(function() {
 		var $likeButton = $('.like-project').find('span')
 		console.log($likeButton)
 
+		console.log('clicked');
+
 		if ($likeButton.hasClass('heart-unselected')) {
 
 			liked = true;
@@ -77,6 +79,5 @@ $(function() {
 		$('#projects-by-likes').css('display', 'none');
 		$('#sort-by-text').text('Most Recent');
 	});
-
 
 }); //end of function

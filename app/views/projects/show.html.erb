@@ -39,7 +39,7 @@
         <div class="project-view-item">
 
           <% if current_user %>
-            <a  class="project-view-like" href="javascript:void(0)" class="like-project" data-id="<%= @project.id %>">
+            <a  class="project-view-like like-project" href="javascript:void(0)" class="like-project" data-id="<%= @project.id %>">
               <% if current_user.liked_projects.include? @project %>
                 <span class="fa fa-heart fa-fw heart-selected profile-info-icon" aria-hidden="true"></span><span class="like-project-text">Unlike</span>
               <% else %>
@@ -75,12 +75,3 @@
 
   </div> <!-- end of main row -->
 </div> <!-- end of container -->
-
-
-
-
-
-
-
-
-
