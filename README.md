@@ -14,9 +14,9 @@ Canopy is a go-to sharing resource for web developers, programmers and engineers
 
 ## API Reference
 You will need to request an API key from Screenshotmachine and create a .env file in the root directory. Your .env file should contain the following:
-*S3_BUCKET=project-canopy
-*S3_PUBLIC_KEY='KEY'
-*S3_SECRET='KEY'
+* S3_BUCKET=project-canopy
+* S3_PUBLIC_KEY='KEY'
+* S3_SECRET='KEY'
 
 ## Technologies Used
 * Highlight.js
