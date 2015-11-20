@@ -236,7 +236,17 @@ pre {
     border-radius: $border-radius;
 }
 
+/* - - - - - - - - Media Queries - - - - - - - - */
 
+@media (max-width: 480px) {
+  .col-xs-3 {
+    width: 100%;
+  }
+}
 
-
+@media (max-width: 772px) {
+  .project-preview-container {
+    width: 187.5px;
+  }
+}
 
