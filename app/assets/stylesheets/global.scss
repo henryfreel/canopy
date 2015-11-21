@@ -117,7 +117,7 @@ body {
 }
 
 .input-button, .btn-primary.active, .btn-primary:active {
-    background-color: $primary-color-dark;
+  background-color: $primary-color-dark;
 }
 
 .btn-default {
@@ -129,15 +129,15 @@ body {
 }
 
 .navbar-nav > li > a {
-    padding-top: 21px;
-    padding-bottom: 19px;
-    padding-left: 10px;
-    padding-right: 10px;
+  padding-top: 21px;
+  padding-bottom: 19px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .navbar-nav > li > a.navbar-action {
-    padding-left: 15px;
-    padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .navbar-default {
@@ -221,30 +221,24 @@ iframe {
 
 pre {
 	font-size: 13px;
-    display: block;
-    padding: 6px;
-  	padding-left: 10px;
-  	padding-right: 10px;
-    margin: 0 0 10px;
-    font-size: 13px;
-    line-height: 1.42857143;
-    color: #333;
-    word-break: break-all;
-    word-wrap: break-word;
-    background-color: $snippet-bg;
-    border: 1px solid $snippet-bg;
-    border-radius: $border-radius;
+  display: block;
+  padding: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: $snippet-bg;
+  border: 1px solid $snippet-bg;
+  border-radius: $border-radius;
 }
 
 /* - - - - - - - - Media Queries - - - - - - - - */
 
-@media (max-width: 480px) {
-  .col-xs-3 {
-    width: 100%;
-  }
-}
-
-@media (max-width: 772px) {
+@media (max-width: 768px) {
   .project-preview-container {
     width: 187.5px;
   }

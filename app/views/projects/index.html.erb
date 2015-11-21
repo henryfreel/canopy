@@ -18,7 +18,7 @@
   	
     <div id="projects-by-recent" style="display:block">
     	<% @projects.limit(20).reverse_each do |project| %>
-        <div class="col-xs-3 project-preview-container">
+        <div class="col-xs-6 col-sm-3 project-preview-container">
           <div class="project-preview-content">
             <a href="/projects/<%= project.id %>"><div class="project-preview-image" style="background-image: url(<%= project.screenshot.url %>);"></div></a>
             <div class="project-preview-info">
