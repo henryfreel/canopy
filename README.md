@@ -19,11 +19,12 @@ You will need to request an API key from Screenshotmachine and create a .env fil
 * S3_SECRET='KEY'
 
 ## Technologies Used
-* Highlight.js
-* jQuery
-* Bootstrap
-* Paperclip
+* PostgreSQL
 * Screenshot Machine API
+* Highlight.js
+* Paperclip
+* Bootstrap
+* jQuery
 
 ## Contributors
 * Alex Chan - https://github.com/alex415
